@@ -307,15 +307,20 @@ const Home = () => {
               <h2 style={{ fontSize: '32px', marginBottom: '12px' }}>Meet Our Top Rated Surgeons</h2>
               <p style={{ color: 'var(--text-muted)' }}>World-class specialists with over 15+ years of clinical experience.</p>
             </div>
-            <Link to="/search" className="btn-outline">View All Doctors</Link>
+            <Link to="/doctors" className="btn-outline">View All Doctors</Link>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             {[
+              { name: "Dr. Tarik Akar", exp: "18 Years", field: "Gastroenterologist", clinic: "Liv Hospital Ulus", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300&h=300", badge: "European Board Certified" },
               { name: "Dr. Bülent Cihantimur", exp: "25 Years", field: "Plastic Surgery", clinic: "Estetik International", img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300&h=300", badge: "Global Talent Award" },
-              { name: "Dr. Sait Gökhan Bircan", exp: "18 Years", field: "Hair Transplant", clinic: "Bircan Clinic", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300&h=300", badge: "ISHRS Member" },
               { name: "Dr. Mehmet Erdoğan", exp: "14 Years", field: "Dental Implants", clinic: "Smile Center", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300&h=300", badge: "Expert Implantologist" },
             ].map((doc, i) => (
-              <div key={i} className="glass card-hover" style={{ borderRadius: '24px', overflow: 'hidden' }}>
+              <Link 
+                to={`/doctor/${doc.name.toLowerCase().replace('dr. ', '').replace(/\s+/g, '-')}`} 
+                key={i} 
+                className="glass card-hover" 
+                style={{ borderRadius: '24px', overflow: 'hidden', textDecoration: 'none', color: 'inherit', display: 'block' }}
+              >
                 <div style={{ position: 'relative', height: '240px' }}>
                   <img src={doc.img} alt={doc.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   <div style={{ position: 'absolute', top: '15px', right: '15px', background: 'white', color: 'var(--primary)', padding: '4px 12px', borderRadius: '100px', fontSize: '11px', fontWeight: '800' }}>
@@ -330,7 +335,7 @@ const Home = () => {
                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><Building2 size={14} /> At {doc.clinic}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
