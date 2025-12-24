@@ -138,9 +138,9 @@ const Home = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
             {[
               { country: 'Turkey', proc: 'Hair Transplant', price: '€1,600', save: 'Save 70%', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&q=80&w=400', flag: '🇹🇷' },
-              { country: 'Mexico', proc: 'Dental Veneers', price: '$4,200', save: 'Save 60%', img: 'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&q=80&w=400', flag: '🇲🇽' },
-              { country: 'Thailand', proc: 'Rhinoplasty', price: '$3,100', save: 'Save 55%', img: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=400', flag: '🇹🇭' },
-              { country: 'Germany', proc: 'Oncology Checkup', price: '€2,500', save: 'Top Quality', img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&q=80&w=400', flag: '🇩🇪' },
+              { country: 'Mexico', proc: 'Dental Veneers', price: '$4,200', save: 'Save 60%', img: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=400', flag: '🇲🇽' },
+              { country: 'Thailand', proc: 'Rhinoplasty', price: '$3,100', save: 'Save 55%', img: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&q=80&w=400', flag: '🇹🇭' },
+              { country: 'Germany', proc: 'Oncology Checkup', price: '€2,500', save: 'Top Quality', img: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&q=80&w=400', flag: '🇩🇪' },
             ].map((item, i) => (
                <div key={i} className="card-hover" style={{ background: 'white', borderRadius: '24px', overflow: 'hidden', border: '1px solid var(--border)' }}>
                  <div style={{ height: '180px', position: 'relative' }}>
@@ -235,19 +235,19 @@ const Home = () => {
                 name: 'Dr. Ergin Er', 
                 role: 'Medical Director', 
                 expert: 'Plastic Surgery', 
-                image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300&h=300' 
+                image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300&h=300' 
               },
               { 
                 name: 'Dr. Sarah Wilson', 
                 role: 'Clinical Advisor', 
                 expert: 'Infertility', 
-                image: 'https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=300&h=300' 
+                image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300' 
               },
               { 
                 name: 'Dr. Mark Thompson', 
                 role: 'Quality Head', 
                 expert: 'Oncology', 
-                image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300&h=300' 
+                image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300&h=300' 
               }
             ].map((doc, i) => (
               <div key={i} className="glass" style={{ padding: '40px 30px', textAlign: 'center', borderRadius: '32px', boxShadow: 'var(--shadow-md)' }}>
@@ -279,7 +279,7 @@ const Home = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px' }}>
             {[
               { title: 'Full Mouth Restoration', name: 'James from USA', savings: '$12,000 saved', img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800&h=500' },
-              { title: 'Oncology Treatment', name: 'Elena from Italy', savings: 'Complex Care', img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800&h=500' }
+              { title: 'Oncology Treatment', name: 'Elena from Italy', savings: 'Complex Care', img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=500' }
             ].map((item, i) => (
               <div key={i} className="card-hover" style={{ position: 'relative', height: '450px', borderRadius: '32px', overflow: 'hidden', cursor: 'pointer' }}>
                 <img src={item.img} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -311,10 +311,9 @@ const Home = () => {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             {[
-              { name: "Dr. Bülent Cihantimur", exp: "25 Years", field: "Plastic Surgery", clinic: "Estetik International", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format", badge: "Global Talent Award" },
-              { name: "Dr. Sait Gökhan Bircan", exp: "18 Years", field: "Hair Transplant", clinic: "Bircan Clinic", img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format", badge: "ISHRS Member" },
-              { name: "Dr. Mehmet Erdoğan", exp: "14 Years", field: "Dental Implants", clinic: "Smile Center", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format", badge: "Expert Implantologist" },
-              { name: "Dr. Elif Gür", exp: "20 Years", field: "IVF Specialist", clinic: "Medical Park", img: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format", badge: "Best Embryologist" },
+              { name: "Dr. Bülent Cihantimur", exp: "25 Years", field: "Plastic Surgery", clinic: "Estetik International", img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300&h=300", badge: "Global Talent Award" },
+              { name: "Dr. Sait Gökhan Bircan", exp: "18 Years", field: "Hair Transplant", clinic: "Bircan Clinic", img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300&h=300", badge: "ISHRS Member" },
+              { name: "Dr. Mehmet Erdoğan", exp: "14 Years", field: "Dental Implants", clinic: "Smile Center", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300&h=300", badge: "Expert Implantologist" },
             ].map((doc, i) => (
               <div key={i} className="glass card-hover" style={{ borderRadius: '24px', overflow: 'hidden' }}>
                 <div style={{ position: 'relative', height: '240px' }}>
@@ -364,9 +363,9 @@ const Home = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
             {[
-              { title: 'Hair Transplant Cost 2025: Turkey vs UK', cat: 'Price Analysis', date: 'Dec 12, 2024', img: 'https://images.unsplash.com/photo-1615568434720-69238383e20e?auto=format&fit=crop&q=80&w=600' },
+              { title: 'Hair Transplant Cost 2025: Turkey vs UK', cat: 'Price Analysis', date: 'Dec 12, 2024', img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600' },
               { title: 'All-on-4 Dental Implants: Complete Guide', cat: 'Treatment Guide', date: 'Dec 10, 2024', img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=600' },
-              { title: 'Choosing the Right Rhinoplasty Surgeon', cat: 'Tips', date: 'Dec 05, 2024', img: 'https://images.unsplash.com/photo-1542731441-137a1f592aaa?auto=format&fit=crop&q=80&w=600' }
+              { title: 'Choosing the Right Rhinoplasty Surgeon', cat: 'Tips', date: 'Dec 05, 2024', img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600' }
             ].map((post, i) => (
               <div key={i} className="card-hover" style={{ background: 'white', borderRadius: '24px', overflow: 'hidden' }}>
                 <div style={{ position: 'relative', height: '220px' }}>
@@ -489,10 +488,10 @@ const Home = () => {
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
                {[
-                 { name: "Sarah M.", lang: "English, German", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" },
-                 { name: "Ahmed K.", lang: "Arabic, French", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300" },
-                 { name: "Elena R.", lang: "Russian, English", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=300" },
-                 { name: "Dr. Chen", lang: "Chinese, English", img: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=300" }
+                 { name: "Sarah M.", lang: "English, German", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300" },
+                 { name: "Ahmed K.", lang: "Arabic, French", img: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?auto=format&fit=crop&q=80&w=300" },
+                 { name: "Elena R.", lang: "Russian, English", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" },
+                 { name: "Dr. Chen", lang: "Chinese, English", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" }
                ].map((person, i) => (
                  <div key={i} className="glass" style={{ padding: '20px', borderRadius: '24px', textAlign: 'center', marginTop: i % 2 !== 0 ? '40px' : '0' }}>
                    <img src={person.img} style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', marginBottom: '16px' }} alt={person.name} />
@@ -515,9 +514,9 @@ const Home = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
             {[
-              { title: 'Hair Transplant', patient: 'David, 34', time: '12 Months Post-op', imgBefore: 'https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=400' },
-              { title: 'Rhinoplasty', patient: 'Emma, 29', time: '6 Months Post-op', imgBefore: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=400' },
-              { title: 'Dental Veneers', patient: 'Michael, 42', time: 'Final Result', imgBefore: 'https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400' }
+              { title: 'Hair Transplant', patient: 'David, 34', time: '12 Months Post-op', imgBefore: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=400' },
+              { title: 'Rhinoplasty', patient: 'Emma, 29', time: '6 Months Post-op', imgBefore: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400' },
+              { title: 'Dental Veneers', patient: 'Michael, 42', time: 'Final Result', imgBefore: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400', imgAfter: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400' }
             ].map((item, i) => (
               <div key={i} className="glass" style={{ borderRadius: '24px', overflow: 'hidden', padding: '20px', background: 'white' }}>
                  <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
@@ -577,7 +576,7 @@ const Home = () => {
             </div>
             <div style={{ position: 'relative' }}>
                <img 
-                src="https://images.unsplash.com/photo-1526628953301-3e589a6a12ae?auto=format&fit=crop&q=80&w=800" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" 
                 alt="Global Team" 
                 style={{ width: '100%', borderRadius: '40px' }}
               />
@@ -599,9 +598,9 @@ const Home = () => {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '30px' }}>
             {[
-              { title: 'Premium Hair Transplant', loc: 'Istanbul, Turkey', price: '€1,790', oldPrice: '€2,500', img: 'https://images.unsplash.com/photo-1615568434720-69238383e20e?auto=format&fit=crop&q=80&w=600', includes: ['FUE/DHI Method', '3 Nights Hotel', 'VIP Transfer', 'PRP Session'] },
+              { title: 'Premium Hair Transplant', loc: 'Istanbul, Turkey', price: '€1,790', oldPrice: '€2,500', img: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=600', includes: ['FUE/DHI Method', '3 Nights Hotel', 'VIP Transfer', 'PRP Session'] },
               { title: 'Hollywood Smile Makeover', loc: 'Izmir, Turkey', price: '€3,200', oldPrice: '€4,500', img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=600', includes: ['20 Zirconia Veneers', '5 Nights Hotel', 'Airport Pickup', 'City Tour'] },
-              { title: 'Rhinoplasty (All-In)', loc: 'Antalya, Turkey', price: '€2,600', oldPrice: '€3,200', img: 'https://images.unsplash.com/photo-1542731441-137a1f592aaa?auto=format&fit=crop&q=80&w=600', includes: ['Surgery & Meds', '4 Nights Hotel', 'Nurse Visit', 'Post-op Care'] },
+              { title: 'Rhinoplasty (All-In)', loc: 'Antalya, Turkey', price: '€2,600', oldPrice: '€3,200', img: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600', includes: ['Surgery & Meds', '4 Nights Hotel', 'Nurse Visit', 'Post-op Care'] },
             ].map((deal, i) => (
               <div key={i} className="card-hover" style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid #e2e8f0', background: 'white', position: 'relative' }}>
                 <div style={{ position: 'relative', height: '220px' }}>
