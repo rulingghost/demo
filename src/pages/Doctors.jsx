@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Star, MapPin, Building2, ChevronRight, Search, ShieldCheck } from 'lucide-react';
 
 const Doctors = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  
   const doctors = [
     { 
       id: 'tarik-akar', 
@@ -39,8 +41,62 @@ const Doctors = () => {
       badge: "Expert Implantologist",
       rating: 4.8,
       reviews: 432
+    },
+    { 
+      id: 'omer-buhsem', 
+      name: "Op. Dr. Ömer Buhşem", 
+      exp: "22 Years", 
+      field: "Aesthetic & Plastic Surgery", 
+      clinic: "D'estetica Klinik", 
+      location: "Bursa",
+      img: "/src/assets/doctors/omer-buhsem/presentation.png", 
+      badge: "ISAPS Member",
+      rating: 4.9,
+      reviews: 312
+    },
+    { 
+      id: 'ayse-yilmaz', 
+      name: "Prof. Dr. Ayşe Yılmaz", 
+      exp: "30 Years", 
+      field: "Onkolog", 
+      clinic: "Acıbadem Altunizade", 
+      location: "İstanbul",
+      img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400&h=400", 
+      badge: "Top Scientist",
+      rating: 4.9,
+      reviews: 560
+    },
+    { 
+      id: 'can-demir', 
+      name: "Dr. Can Demir", 
+      exp: "12 Years", 
+      field: "Saç Ekimi Uzmanı", 
+      clinic: "Esteworld", 
+      location: "İstanbul",
+      img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400&h=400", 
+      badge: "ABHRS Certified",
+      rating: 4.7,
+      reviews: 215
+    },
+    { 
+      id: 'leyla-kaya', 
+      name: "Dr. Leyla Kaya", 
+      exp: "15 Years", 
+      field: "Rinoplasti Uzmanı", 
+      clinic: "Memorial", 
+      location: "İstanbul",
+      img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400&h=400", 
+      badge: "Best Surgeon 2023",
+      rating: 4.9,
+      reviews: 180
     }
   ];
+
+  const filteredDoctors = doctors.filter(doc => 
+    doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    doc.field.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    doc.clinic.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', paddingBottom: '80px' }}>
@@ -52,16 +108,38 @@ const Doctors = () => {
             <ChevronRight size={14} />
             <span style={{ color: 'white' }}>Doctors</span>
           </div>
-          <h1 style={{ fontSize: '42px', fontWeight: '800', marginBottom: '16px' }}>Top-Rated Medical Specialists</h1>
-          <p style={{ fontSize: '18px', opacity: 0.8, maxWidth: '700px' }}>
-            Browse through our verified network of world-class doctors and surgeons across Turkey, Mexico, and Thailand. 
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px' }}>
+            <div>
+              <h1 style={{ fontSize: '42px', fontWeight: '800', marginBottom: '16px' }}>Top-Rated Medical Specialists</h1>
+              <p style={{ fontSize: '18px', opacity: 0.8, maxWidth: '700px' }}>
+                Browse through our verified network of world-class doctors and surgeons across Turkey, Mexico, and Thailand. 
+              </p>
+            </div>
+            <div style={{ position: 'relative', width: '100%', maxWidth: '400px' }}>
+              <Search size={20} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
+              <input 
+                type="text" 
+                placeholder="Doctor, specialty or clinic..." 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '16px 20px 16px 48px',
+                  borderRadius: '16px',
+                  border: 'none',
+                  fontSize: '15px',
+                  outline: 'none',
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', gap: '30px' }}>
-          {doctors.map((doc) => (
+          {filteredDoctors.map((doc) => (
             <div key={doc.id} className="glass card-hover" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '30px', padding: '30px', borderRadius: '32px', background: 'white' }}>
               {/* Image */}
               <div style={{ width: '180px', height: '180px', position: 'relative' }}>

@@ -20,6 +20,7 @@ import ResultsSection from '../components/home/ResultsSection';
 import GlobalPresence from '../components/home/GlobalPresence';
 import DealsSection from '../components/home/DealsSection';
 import SafetySection from '../components/home/SafetySection';
+import QuickHub from '../components/home/QuickHub';
 import Newsletter from '../components/home/Newsletter';
 import SEO from '../components/SEO';
 
@@ -32,30 +33,34 @@ const Home = () => {
       />
       <Hero />
       
-      <LiveTicker />
-      
-      <StatsSection />
-
-      <ProcessSection />
-      <DestinationsSection />
-      <ServicesSection />
-      <TrustBar />
+      <QuickHub />
 
       <Categories />
-      <Features />
 
+      <StatsSection />
+      
+      <DestinationsSection />
+
+      <ResultsSection />
+
+      <SafetySection />
+
+      <ProcessSection />
+      
+      <CareTeam />
+
+      <TrustBar />
+      
       <MedicalBoard />
+      
       <PatientStories />
-      <GlobalMedia />
-      <BlogSection />
+      
+      <DealsSection />
+
       <FAQSection />
 
-      <PriceTable />
-      <CareTeam />
-      <ResultsSection />
-      <GlobalPresence />
-      <DealsSection />
-      <SafetySection />
+      <BlogSection />
+      
       <Newsletter />
 
       {/* Floating CTA Buttons */}

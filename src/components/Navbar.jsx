@@ -20,9 +20,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('navbar.hospitals'), path: '/search' },
+    { name: t('navbar.findDoctor') || 'Doktorlar', path: '/doctors' },
     { name: t('navbar.treatments'), path: '/how-it-works' },
+    { name: 'Akademi', path: '/courses' },
+    { name: 'Güvenlik', path: '/safety' },
     { name: t('navbar.blog'), path: '/blog' },
-    
   ];
 
   return (

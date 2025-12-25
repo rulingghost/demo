@@ -20,7 +20,7 @@ const DoctorProfile = () => {
       id: 3,
       name: "Op. Dr. Ömer Buhşem",
       title: "Plastik, Rekonstrüktif ve Estetik Cerrahi Uzmanı",
-      image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=400&h=400",
+      image: "/src/assets/doctors/omer-buhsem/presentation.png",
       clinic: "D'estetica Klinik",
       location: "Bursa, Türkiye",
       rating: 5.0,
@@ -66,7 +66,12 @@ const DoctorProfile = () => {
         "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=600",
         "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=600"
       ],
-      profile_photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=400",
+      professional_images: [
+        { src: "/src/assets/doctors/omer-buhsem/surgery.jpg", title: "Operasyon Anı" },
+        { src: "/src/assets/doctors/omer-buhsem/training.jpg", title: "Cerrahi Eğitim" },
+        { src: "/src/assets/doctors/omer-buhsem/presentation.png", title: "Akademik Sunum" }
+      ],
+      profile_photo: "/src/assets/doctors/omer-buhsem/presentation.png",
       procedures: [
         { name: "Rinoplasti", price: "€2,800", time: "3 saat" },
         { name: "Meme Estetiği", price: "€3,200", time: "2 saat" },
@@ -371,6 +376,30 @@ const DoctorProfile = () => {
                   ))}
                 </div>
               </motion.div>
+
+              {/* Professional Activities Gallery */}
+              {doctor.professional_images && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}
+                >
+                  <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <Star size={28} color="#fbbf24" fill="rgba(251, 191, 36, 0.1)" /> Akademik & Profesyonel Faaliyetler
+                  </h2>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+                    {doctor.professional_images.map((item, i) => (
+                      <div key={i} className="hover-lift" style={{ borderRadius: '20px', overflow: 'hidden', border: '1px solid #f1f5f9', background: '#f8fafc' }}>
+                        <div style={{ height: '240px' }}>
+                          <img src={item.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={item.title} />
+                        </div>
+                        <div style={{ padding: '12px', textAlign: 'center', fontWeight: '700', color: '#64748b', fontSize: '13px' }}>{item.title}</div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Specialist Treatments */}
               <motion.div 

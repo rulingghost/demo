@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { X, ChevronRight, Home, Search, FileText, Shield, Phone, User } from 'lucide-react';
+import { X, ChevronRight, Home, Search, FileText, Shield, Phone, User, Users, GraduationCap } from 'lucide-react';
 
 const MobileMenu = ({ isOpen, onClose }) => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -16,6 +16,16 @@ const MobileMenu = ({ isOpen, onClose }) => {
       title: 'Tedavi Ara',
       icon: <Search size={20} />,
       link: '/search'
+    },
+    {
+      title: 'Doktorlar',
+      icon: <Users size={20} />,
+      link: '/doctors'
+    },
+    {
+      title: 'Akademi',
+      icon: <GraduationCap size={20} />,
+      link: '/courses'
     },
     {
       title: 'Nasıl Çalışır',

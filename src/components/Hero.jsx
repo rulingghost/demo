@@ -30,7 +30,7 @@ const Hero = () => {
   }, []);
 
   const handleSearch = () => {
-    navigate('/search');
+    navigate(`/search?q=${encodeURIComponent(procValue)}&country=${encodeURIComponent(countryValue)}`);
   };
 
   return (

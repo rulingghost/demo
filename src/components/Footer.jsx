@@ -75,7 +75,7 @@ const Footer = () => {
             <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>{footer.destinations?.title}</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14px' }}>
               {footer.destinations?.items && footer.destinations.items.map((item, i) => (
-                <li key={i}><Link to={`/${item.toLowerCase()}`} style={{ color: '#94a3b8' }}>{item}</Link></li>
+                <li key={i}><Link to={`/search?country=${item}`} style={{ color: '#94a3b8' }}>{item}</Link></li>
               ))}
               <li><Link to="/search" style={{ color: 'var(--primary)', fontWeight: '700' }}>{footer.destinations?.viewAll}</Link></li>
             </ul>
