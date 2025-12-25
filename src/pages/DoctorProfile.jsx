@@ -49,11 +49,23 @@ const DoctorProfile = () => {
         { q: "Hangi derneklerin başkanıdır?", a: "Şu an Türk Estetik Cerrahi Derneği Başkanı olarak görev yapmaktadır." }
       ],
       gallery: [
-        { before: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=400", after: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=400", title: "Rhinoplasty Surgery" }
+        { 
+          before: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=400", 
+          after: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=400", 
+          title: "Rinoplasti Ameliyatı" 
+        },
+        { 
+          before: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=400", 
+          after: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400", 
+          title: "Yüz Estetiği" 
+        }
       ],
       clinic_images: [
-        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600"
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600",
+        "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=600",
+        "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&q=80&w=600"
       ],
+      profile_photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400&h=400",
       procedures: [
         { name: "Rinoplasti", price: "€2,800", time: "3 saat" },
         { name: "Meme Estetiği", price: "€3,200", time: "2 saat" },
