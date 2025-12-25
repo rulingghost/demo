@@ -21,6 +21,8 @@ import DoctorProfile from './pages/DoctorProfile';
 import Doctors from './pages/Doctors';
 import Courses from './pages/Courses';
 import PatientDashboard from './pages/PatientDashboard';
+import { ToastProvider } from './context/ToastContext';
+import ScrollToTopButton from './components/ScrollToTop';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -42,37 +44,40 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <ClinicMatchQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/clinic/:id" element={<ClinicDetail />} />
-        <Route path="/safety" element={<Safety />} />
-        <Route path="/turkey" element={<LandingPage country="Turkey" />} />
-        <Route path="/thailand" element={<LandingPage country="Thailand" />} />
-        <Route path="/mexico" element={<LandingPage country="Mexico" />} />
-        <Route path="/germany" element={<LandingPage country="Germany" />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/second-opinion" element={<SecondOpinion />} />
-        <Route path="/treatment/:slug" element={<TreatmentDetail />} />
-        <Route path="/doctor/:id" element={<DoctorProfile />} />
-        <Route path="/doctor-profile" element={<DoctorProfile />} />
-        <Route path="/doctors" element={<Doctors />} />
-        <Route path="/doctor" element={<Doctors />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/dashboard" element={<PatientDashboard />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <ToastProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <ClinicMatchQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/clinic/:id" element={<ClinicDetail />} />
+          <Route path="/safety" element={<Safety />} />
+          <Route path="/turkey" element={<LandingPage country="Turkey" />} />
+          <Route path="/thailand" element={<LandingPage country="Thailand" />} />
+          <Route path="/mexico" element={<LandingPage country="Mexico" />} />
+          <Route path="/germany" element={<LandingPage country="Germany" />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/second-opinion" element={<SecondOpinion />} />
+          <Route path="/treatment/:slug" element={<TreatmentDetail />} />
+          <Route path="/doctor/:id" element={<DoctorProfile />} />
+          <Route path="/doctor-profile" element={<DoctorProfile />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/doctor" element={<Doctors />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/dashboard" element={<PatientDashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+        <ScrollToTopButton />
+      </BrowserRouter>
+    </ToastProvider>
   );
 };
 
