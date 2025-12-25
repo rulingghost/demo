@@ -166,7 +166,7 @@ const DoctorProfile = () => {
     }
   };
 
-  const doctor = doctorsData[id] || doctorsData['tarik-akar']; 
+  const doctor = doctorsData[id] || doctorsData['omer-buhsem']; 
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', paddingBottom: '80px', paddingTop: '100px' }}>
@@ -193,7 +193,7 @@ const DoctorProfile = () => {
           {/* Image */}
           <div style={{ position: 'relative' }}>
             <img 
-              src={doctor.image} 
+              src={doctor.profile_photo || doctor.image} 
               alt={doctor.name} 
               style={{ width: '220px', height: '220px', borderRadius: '40px', objectFit: 'cover', border: '6px solid white', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }} 
             />

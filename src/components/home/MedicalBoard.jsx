@@ -45,32 +45,42 @@ const MedicalBoard = () => {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-          {doctors.map((doc, i) => (
-            <Link 
-              key={i}
-              to="/doctor-profile"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="glass hover-lift" 
-                style={{ padding: '50px 30px', textAlign: 'center', borderRadius: '40px', border: '1px solid var(--border-light)', cursor: 'pointer' }}
+          {doctors.map((doc, i) => {
+            // Map doctor names to their IDs
+            const doctorIds = {
+              'Op. Dr. Ömer Buhşem': 'omer-buhsem',
+              'Dr. Ergin Er': 'tarik-akar',
+              'Dr. Sarah Wilson': 'bulent-cihantimur',
+              'Dr. Mark Thompson': 'tarik-akar'
+            };
+            
+            return (
+              <Link 
+                key={i}
+                to={`/doctor/${doctorIds[doc.name] || 'omer-buhsem'}`}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <div style={{ position: 'relative', display: 'inline-block', marginBottom: '25px' }}>
-                  <img src={doc.image} alt={doc.name} style={{ width: '140px', height: '140px', borderRadius: '50%', objectFit: 'cover', border: '5px solid white', boxShadow: 'var(--shadow-md)' }} />
-                  <div style={{ position: 'absolute', bottom: '5px', right: '5px', background: 'var(--accent)', width: '25px', height: '25px', borderRadius: '50%', border: '3px solid white' }}></div>
-                </div>
-                <h3 style={{ fontSize: '22px', marginBottom: '8px', fontWeight: '800' }}>{doc.name}</h3>
-                <p style={{ color: 'var(--primary)', fontWeight: '800', fontSize: '14px', marginBottom: '15px', textTransform: 'uppercase' }}>{doc.role}</p>
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)', background: 'var(--surface)', padding: '8px 20px', borderRadius: '100px', display: 'inline-block', fontWeight: '700' }}>
-                   {doc.expert}
-                </div>
-              </motion.div>
-            </Link>
-          ))}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="glass hover-lift" 
+                  style={{ padding: '50px 30px', textAlign: 'center', borderRadius: '40px', border: '1px solid var(--border-light)', cursor: 'pointer' }}
+                >
+                  <div style={{ position: 'relative', display: 'inline-block', marginBottom: '25px' }}>
+                    <img src={doc.image} alt={doc.name} style={{ width: '140px', height: '140px', borderRadius: '50%', objectFit: 'cover', border: '5px solid white', boxShadow: 'var(--shadow-md)' }} />
+                    <div style={{ position: 'absolute', bottom: '5px', right: '5px', background: 'var(--accent)', width: '25px', height: '25px', borderRadius: '50%', border: '3px solid white' }}></div>
+                  </div>
+                  <h3 style={{ fontSize: '22px', marginBottom: '8px', fontWeight: '800' }}>{doc.name}</h3>
+                  <p style={{ color: 'var(--primary)', fontWeight: '800', fontSize: '14px', marginBottom: '15px', textTransform: 'uppercase' }}>{doc.role}</p>
+                  <div style={{ fontSize: '12px', color: 'var(--text-muted)', background: 'var(--surface)', padding: '8px 20px', borderRadius: '100px', display: 'inline-block', fontWeight: '700' }}>
+                     {doc.expert}
+                  </div>
+                </motion.div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
