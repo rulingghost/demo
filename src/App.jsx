@@ -23,6 +23,7 @@ import Courses from './pages/Courses';
 import PatientDashboard from './pages/PatientDashboard';
 import { ToastProvider } from './context/ToastContext';
 import ScrollToTopButton from './components/ScrollToTop';
+import { AuthProvider } from './context/AuthContext';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -44,8 +45,9 @@ const App = () => {
   }, []);
 
   return (
-    <ToastProvider>
-      <BrowserRouter>
+    <AuthProvider>
+      <ToastProvider>
+        <BrowserRouter>
         <ScrollToTop />
         <Navbar />
         <ClinicMatchQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
@@ -78,6 +80,7 @@ const App = () => {
         <ScrollToTopButton />
       </BrowserRouter>
     </ToastProvider>
+  </AuthProvider>
   );
 };
 
