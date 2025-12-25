@@ -21,10 +21,15 @@ import GlobalPresence from '../components/home/GlobalPresence';
 import DealsSection from '../components/home/DealsSection';
 import SafetySection from '../components/home/SafetySection';
 import Newsletter from '../components/home/Newsletter';
+import SEO from '../components/SEO';
 
 const Home = () => {
   return (
     <div style={{ paddingTop: '80px' }}>
+      <SEO 
+        title="Doctora | Dünya Çapında Güvenilir Sağlık Turizmi"
+        description="Türkiye'nin en iyi doktorları ve klinikleriyle tanışın. Saç ekimi, estetik cerrahi ve diş tedavilerinde uzman kadromuzla yanınızdayız."
+      />
       <Hero />
       
       <LiveTicker />

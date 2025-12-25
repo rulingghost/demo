@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 const DoctorProfile = () => {
   const { id } = useParams();
@@ -170,6 +171,11 @@ const DoctorProfile = () => {
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', paddingBottom: '80px', paddingTop: '100px' }}>
+      <SEO 
+        title={`${doctor.name} | ${doctor.title} | Doctora`}
+        description={`${doctor.name}, ${doctor.location} lokasyonunda ${doctor.experience} deneyime sahip ${doctor.title} uzmanıdır. ${doctor.specialties.join(', ')} gibi alanlarda uzmanlaşmıştır.`}
+        image={doctor.profile_photo || doctor.image}
+      />
       {/* Breadcrumb */}
       <div className="container" style={{ padding: '20px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#64748b' }}>

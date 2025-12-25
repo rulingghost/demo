@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Search from './pages/Search';
-import HowItWorks from './pages/HowItWorks';
-import Reviews from './pages/Reviews';
-import ClinicDetail from './pages/ClinicDetail';
-import Safety from './pages/Safety';
-import LandingPage from './pages/LandingPage';
-import Blog from './pages/Blog';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
-import NotFound from './pages/NotFound';
 import ClinicMatchQuiz from './components/ClinicMatchQuiz';
-import SecondOpinion from './pages/SecondOpinion';
-import TreatmentDetail from './pages/TreatmentDetail';
-import DoctorProfile from './pages/DoctorProfile';
-import Doctors from './pages/Doctors';
-import Courses from './pages/Courses';
-import PatientDashboard from './pages/PatientDashboard';
+import LoadingSpinner from './components/LoadingSpinner';
+
+const Home = lazy(() => import('./pages/Home'));
+const Search = lazy(() => import('./pages/Search'));
+const HowItWorks = lazy(() => import('./pages/HowItWorks'));
+const Reviews = lazy(() => import('./pages/Reviews'));
+const ClinicDetail = lazy(() => import('./pages/ClinicDetail'));
+const Safety = lazy(() => import('./pages/Safety'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const Blog = lazy(() => import('./pages/Blog'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const SecondOpinion = lazy(() => import('./pages/SecondOpinion'));
+const TreatmentDetail = lazy(() => import('./pages/TreatmentDetail'));
+const DoctorProfile = lazy(() => import('./pages/DoctorProfile'));
+const Doctors = lazy(() => import('./pages/Doctors'));
+const Courses = lazy(() => import('./pages/Courses'));
+const PatientDashboard = lazy(() => import('./pages/PatientDashboard'));
 import { ToastProvider } from './context/ToastContext';
 import ScrollToTopButton from './components/ScrollToTop';
 import { AuthProvider } from './context/AuthContext';
@@ -51,31 +53,33 @@ const App = () => {
         <ScrollToTop />
         <Navbar />
         <ClinicMatchQuiz isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/clinic/:id" element={<ClinicDetail />} />
-          <Route path="/safety" element={<Safety />} />
-          <Route path="/turkey" element={<LandingPage country="Turkey" />} />
-          <Route path="/thailand" element={<LandingPage country="Thailand" />} />
-          <Route path="/mexico" element={<LandingPage country="Mexico" />} />
-          <Route path="/germany" element={<LandingPage country="Germany" />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/second-opinion" element={<SecondOpinion />} />
-          <Route path="/treatment/:slug" element={<TreatmentDetail />} />
-          <Route path="/doctor/:id" element={<DoctorProfile />} />
-          <Route path="/doctor-profile" element={<DoctorProfile />} />
-          <Route path="/doctors" element={<Doctors />} />
-          <Route path="/doctor" element={<Doctors />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/dashboard" element={<PatientDashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<LoadingSpinner fullScreen />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/clinic/:id" element={<ClinicDetail />} />
+            <Route path="/safety" element={<Safety />} />
+            <Route path="/turkey" element={<LandingPage country="Turkey" />} />
+            <Route path="/thailand" element={<LandingPage country="Thailand" />} />
+            <Route path="/mexico" element={<LandingPage country="Mexico" />} />
+            <Route path="/germany" element={<LandingPage country="Germany" />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/second-opinion" element={<SecondOpinion />} />
+            <Route path="/treatment/:slug" element={<TreatmentDetail />} />
+            <Route path="/doctor/:id" element={<DoctorProfile />} />
+            <Route path="/doctor-profile" element={<DoctorProfile />} />
+            <Route path="/doctors" element={<Doctors />} />
+            <Route path="/doctor" element={<Doctors />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/dashboard" element={<PatientDashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
         <Footer />
         <ScrollToTopButton />
       </BrowserRouter>
