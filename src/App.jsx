@@ -19,6 +19,8 @@ import SecondOpinion from './pages/SecondOpinion';
 import TreatmentDetail from './pages/TreatmentDetail';
 import DoctorProfile from './pages/DoctorProfile';
 import Doctors from './pages/Doctors';
+import Courses from './pages/Courses';
+import PatientDashboard from './pages/PatientDashboard';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -64,6 +66,8 @@ const App = () => {
         <Route path="/doctor/:id" element={<DoctorProfile />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/doctor" element={<Doctors />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/dashboard" element={<PatientDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,19 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
-  Star, ShieldCheck, MapPin, Calendar, Globe, Award, 
-  CheckCircle, Clock, Stethoscope, GraduationCap, 
-  MessageCircle, ThumbsUp, ChevronRight, User, 
-  ArrowRight, Heart, Share2, Bookmark, FileText, 
-  PlayCircle, Medal, HeartPulse, Microscope, Camera, Building2
+  Star, ShieldCheck, MapPin, Globe, Award, 
+  CheckCircle, MessageCircle, ThumbsUp, ChevronRight, User, 
+  ArrowRight, HeartPulse, Microscope, Camera, Building2, PlayCircle, GraduationCap, FileText
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const DoctorProfile = () => {
   const { id } = useParams();
   const [activeTab, setActiveTab] = useState('overview');
+  const { t } = useLanguage();
 
   // Multi-doctor data support
   const doctorsData = {
+    'omer-buhsem': {
+      id: 3,
+      name: "Op. Dr. Ömer Buhşem",
+      title: "Plastik, Rekonstrüktif ve Estetik Cerrahi Uzmanı",
+      image: "https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=400&h=400",
+      clinic: "D'estetica Klinik",
+      location: "Bursa, Türkiye",
+      rating: 5.0,
+      reviews: 420,
+      experience: "32+ Yıl",
+      languages: ["Türkçe", "İngilizce"],
+      specialties: ["Rinoplasti", "Meme Estetiği", "Yüz Gençleştirme", "El Cerrahisi", "Laser Tedavileri"],
+      priceFrom: "€2,800",
+      about: `Op. Dr. Ömer Buhşem, 30 yılı aşkın mesleki kariyerinde akademik liderlik ve klinik mükemmeliyeti birleştirmiş bir cerrahtır. Türk Estetik Cerrahi Derneği Başkanı olarak görev yapan Dr. Buhşem, hem rekonstrüktif disiplini hem de estetik sanatı en yüksek etik standartlarda uygular.
+      Kariyerinde Dicle Üniversitesi PRAS Anabilim Dalı Başkanlığı ve Acıbadem Konur Hastanesi Başhekimliği gibi kritik roller üstlenmiştir.`,
+      education: [
+        { year: "1994 - 2000", degree: "Plastik, Rekonstrüktif ve Estetik Cerrahi Uzmanlık", school: "Uludağ Üniversitesi Tıp Fakültesi" },
+        { year: "1985 - 1991", degree: "Tıp Doktoru (MD)", school: "Uludağ Üniversitesi Tıp Fakültesi" }
+      ],
+      experience_timeline: [
+        { year: "2011 - 2021", role: "Kurucu / Kıdemli Cerrah", place: "Estetika Özel Klinik" },
+        { year: "2009 - 2011", role: "Direktör ve Başhekim", place: "Acıbadem Konur Tıp Merkezi" }
+      ],
+      achievements: [
+        "President of Turkish Aesthetic Surgery Association",
+        "TPRECD Board Member",
+        "JAPA Editor",
+        "International Clinical Director"
+      ],
+      faq: [
+        { q: "Doktor Ömer Buhşem'in uzmanlık alanları nelerdir?", a: "Rinoplasti, meme estetiği, yüz germe, el cerrahisi ve lazer tedavileri ana uzmanlık alanlarıdır." },
+        { q: "Hangi derneklerin başkanıdır?", a: "Şu an Türk Estetik Cerrahi Derneği Başkanı olarak görev yapmaktadır." }
+      ],
+      gallery: [
+        { before: "https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=400", after: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=400", title: "Rhinoplasty Surgery" }
+      ],
+      clinic_images: [
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600"
+      ],
+      procedures: [
+        { name: "Rinoplasti", price: "€2,800", time: "3 saat" },
+        { name: "Meme Estetiği", price: "€3,200", time: "2 saat" },
+        { name: "Yüz Germe", price: "€4,500", time: "4 saat" }
+      ]
+    },
     'tarik-akar': {
       id: 1,
       name: "Dr. Tarik Akar",
@@ -28,8 +74,7 @@ const DoctorProfile = () => {
       specialties: ["Gastroenterology", "Hepatology", "Endoscopy", "Colon cancer"],
       priceFrom: "€1,200",
       about: `Dr. Tarik Akar is a highly experienced Gastroenterologist with over 18 years of practice. He is renowned for his expertise in advanced endoscopic procedures and the treatment of complex gastrointestinal disorders. Dr. Akar has performed over 15,000 successful endoscopies and colonoscopies.
-
-      He graduated from the prestigious Hacettepe University Faculty of Medicine and completed his specialization at Gazi University. Dr. Akar is an active member of the European Society of Gastrointestinal Endoscopy (ESGE) and has published numerous research papers in international medical journals.`,
+       He graduated from the prestigious Hacettepe University Faculty of Medicine and completed his specialization at Gazi University.`,
       education: [
         { year: "2008 - 2012", degree: "Gastroenterology Specialization", school: "Gazi University Faculty of Medicine" },
         { year: "2002 - 2008", degree: "Medical Doctor (M.D.)", school: "Hacettepe University Faculty of Medicine" }
@@ -38,21 +83,15 @@ const DoctorProfile = () => {
         { year: "2018 - Present", role: "Senior Gastroenterologist", place: "Liv Hospital Ulus" },
         { year: "2012 - 2018", role: "Specialist Doctor", place: "Ankara Training and Research Hospital" }
       ],
-      certificates: ["ESGE Member", "Turkish Gastroenterology Association", "Advanced Endoscopy Certification"],
       achievements: [
         "Performed 15,000+ Endoscopies",
         "European Board of Gastroenterology Certified",
         "Best Doctor of the Year 2021 nominee",
         "Published 30+ Academic Papers"
       ],
-      publications: [
-        "Advanced Endoscopy Techniques in Early GI Cancer (2022)",
-        "Hepatology: A Modern Approach to Fatty Liver Disease (2021)",
-        "Microbiome and Longevity: The Gastric Connection (2019)"
-      ],
       faq: [
-        { q: "How long is the recovery from a colonoscopy?", a: "Typically, recovery is fast. Most patients return to their normal diet after the procedure if no polyps were removed. Some mild bloating might occur." },
-        { q: "Do I need a referral to see Dr. Tarik Akar?", a: "No, you can book a direct consultation through Sarfea for a fast track expert opinion." }
+        { q: "How long is the recovery from a colonoscopy?", a: "Typically, recovery is fast. Most patients return to their normal diet after the procedure." },
+        { q: "Do I need a referral to see Dr. Tarik Akar?", a: "No, you can book a direct consultation through our platform." }
       ],
       gallery: [
         { before: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400", after: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400", title: "Gastric Health Recovery" },
@@ -66,8 +105,7 @@ const DoctorProfile = () => {
       procedures: [
         { name: "Diagnostic Endoscopy", price: "€450", time: "30-45 mins" },
         { name: "Colonoscopy (Full)", price: "€750", time: "1 hour" },
-        { name: "Gastric Botox", price: "€1,200", time: "20 mins" },
-        { name: "Hepatitis C Treatment Package", price: "€2,500", time: "Variable" }
+        { name: "Gastric Botox", price: "€1,200", time: "20 mins" }
       ]
     },
     'bulent-cihantimur': {
@@ -83,9 +121,7 @@ const DoctorProfile = () => {
       languages: ["English", "Turkish", "French"],
       specialties: ["Vaser Liposuction", "BBL", "Spider Web Technique", "Rhinoplasty"],
       priceFrom: "€3,500",
-      about: `Dr. Bülent Cihantimur (Doctor B) is a world-renowned Plastic Surgeon known for his innovative techniques and artistic approach to aesthetics. He is the founder of Estetik International and the developer of several globally recognized techniques like the Spider Web Technique.
-
-      With over 25 years of experience, he has treated thousands of international patients, including celebrities. He is a frequent speaker at international congresses and has been awarded the 'Golden Bistoury' for his contributions to aesthetic surgery.`,
+      about: `Dr. Bülent Cihantimur (Doctor B) is a world-renowned Plastic Surgeon known for his innovative techniques and artistic approach to aesthetics. He is the founder of Estetik International and the developer of several globally recognized techniques like the Spider Web Technique.`,
       education: [
         { year: "1995 - 1999", degree: "Plastic Surgery Specialization", school: "Uludag University" },
         { year: "1988 - 1994", degree: "M.D.", school: "Istanbul University" }
@@ -93,16 +129,11 @@ const DoctorProfile = () => {
       experience_timeline: [
         { year: "1999 - Present", role: "Founder & Chief Surgeon", place: "Estetik International" }
       ],
-      certificates: ["ISAPS Member", "ASPS Candidate Member", "Turkish Aesthetic Surgery Association"],
       achievements: [
         "Golden Bistoury Award Winner",
         "Developer of Spider Web Technique",
         "Author of 'Aesthetic Philosophy'",
         "100k+ Successful Procedures in Clinic"
-      ],
-      publications: [
-        "The Aesthetic Spine: Spider Web Technique (2018)",
-        "Natural Fat Transfer: Long-term Results (2020)"
       ],
       faq: [
         { q: "What is the Spider Web Technique?", a: "It is a non-surgical face lift technique developed by Dr. B using special medical threads to trigger collagen production." }
@@ -118,22 +149,21 @@ const DoctorProfile = () => {
       procedures: [
         { name: "Spider Web Face Lift", price: "€2,500", time: "1 hour" },
         { name: "Vaser Liposuction (1 Zone)", price: "€1,800", time: "2 hours" },
-        { name: "Rhinoplasty", price: "€3,200", time: "3 hours" },
-        { name: "Brazillian Butt Lift", price: "€4,500", time: "4 hours" }
+        { name: "Rhinoplasty", price: "€3,200", time: "3 hours" }
       ]
     }
   };
 
-  const doctor = doctorsData[id] || doctorsData['tarik-akar']; // Fallback
+  const doctor = doctorsData[id] || doctorsData['tarik-akar']; 
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: '100vh', paddingBottom: '80px' }}>
+    <div style={{ background: '#f8fafc', minHeight: '100vh', paddingBottom: '80px', paddingTop: '100px' }}>
       {/* Breadcrumb */}
       <div className="container" style={{ padding: '20px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#64748b' }}>
-          <Link to="/" style={{ textDecoration: 'none', color: '#64748b' }}>Home</Link>
+          <Link to="/" style={{ textDecoration: 'none', color: '#64748b' }}>{t('navbar.home')}</Link>
           <ChevronRight size={14} />
-          <Link to="/doctors" style={{ textDecoration: 'none', color: '#64748b' }}>Doctors</Link>
+          <Link to="/doctors" style={{ textDecoration: 'none', color: '#64748b' }}>{t('navbar.findDoctor')}</Link>
           <ChevronRight size={14} />
           <span style={{ color: 'var(--primary)', fontWeight: '600' }}>{doctor.name}</span>
         </div>
@@ -141,7 +171,12 @@ const DoctorProfile = () => {
 
       {/* Hero Profile Header */}
       <section className="container" style={{ marginBottom: '40px' }}>
-        <div style={{ background: 'white', borderRadius: '32px', padding: '40px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '40px' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ background: 'white', borderRadius: '32px', padding: '40px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)', display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '40px' }}
+        >
           
           {/* Image */}
           <div style={{ position: 'relative' }}>
@@ -150,15 +185,20 @@ const DoctorProfile = () => {
               alt={doctor.name} 
               style={{ width: '220px', height: '220px', borderRadius: '40px', objectFit: 'cover', border: '6px solid white', boxShadow: '0 8px 30px rgba(0,0,0,0.1)' }} 
             />
-            <div style={{ position: 'absolute', bottom: '15px', right: '15px', background: '#10b981', color: 'white', padding: '10px', borderRadius: '15px', border: '4px solid white', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', fontWeight: '800' }}>
-              <ShieldCheck size={18} /> VERIFIED
-            </div>
+            <motion.div 
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3 }}
+              style={{ position: 'absolute', bottom: '15px', right: '15px', background: '#10b981', color: 'white', padding: '10px', borderRadius: '15px', border: '4px solid white', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', fontWeight: '800' }}
+            >
+              <ShieldCheck size={18} /> {t('doctor.verified')}
+            </motion.div>
           </div>
 
           {/* Info */}
           <div style={{ padding: '10px 0' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '16px' }}>
-              <span style={{ background: '#f0fdf4', color: '#15803d', fontSize: '11px', fontWeight: '800', padding: '6px 14px', borderRadius: '100px', letterSpacing: '0.05em' }}>ACCEPTING NEW PATIENTS</span>
+              <span style={{ background: '#f0fdf4', color: '#15803d', fontSize: '11px', fontWeight: '800', padding: '6px 14px', borderRadius: '100px', letterSpacing: '0.05em' }}>{t('doctor.acceptingPatients')}</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '14px', color: '#fbbf24', fontWeight: '700' }}>
                 <Star size={16} fill="#fbbf24" stroke="none" /> {doctor.rating} ({doctor.reviews} Reviews)
               </div>
@@ -175,7 +215,7 @@ const DoctorProfile = () => {
               {[
                 { icon: <MapPin size={20} />, label: doctor.location },
                 { icon: <Globe size={20} />, label: doctor.languages.join(", ") },
-                { icon: <Medal size={20} />, label: `${doctor.experience} Exp.` }
+                { icon: <Award size={20} />, label: `${doctor.experience}` }
               ].map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#475569', fontSize: '15px', fontWeight: '500' }}>
                   <div style={{ background: '#f1f5f9', padding: '10px', borderRadius: '12px', color: 'var(--primary)' }}>{item.icon}</div>
@@ -185,16 +225,22 @@ const DoctorProfile = () => {
             </div>
 
             <div style={{ display: 'flex', gap: '16px' }}>
-               <button 
+               <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className="btn-primary" 
                   onClick={() => window.dispatchEvent(new CustomEvent('openClinicQuiz'))}
                   style={{ padding: '16px 40px', fontSize: '16px', fontWeight: '800' }}
                 >
-                  Book Free Consult
-               </button>
-               <button className="btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '16px 30px' }}>
-                 <MessageCircle size={20} /> Ask a Question
-               </button>
+                  {t('doctor.bookConsult')}
+               </motion.button>
+               <motion.button 
+                 whileHover={{ scale: 1.05 }}
+                 className="btn-outline" 
+                 style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '16px 30px' }}
+               >
+                 <MessageCircle size={20} /> {t('doctor.askQuestion')}
+               </motion.button>
             </div>
           </div>
 
@@ -205,16 +251,20 @@ const DoctorProfile = () => {
                { icon: <HeartPulse size={28} />, title: "2500+", sub: "Successful Ops", color: "#ef4444", bg: "#fef2f2" },
                { icon: <Microscope size={28} />, title: "30+", sub: "Research Papers", color: "#3b82f6", bg: "#eff6ff" }
              ].map((m, i) => (
-                <div key={i} style={{ background: m.bg, padding: '20px', borderRadius: '24px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <motion.div 
+                  key={i} 
+                  whileHover={{ x: -5 }}
+                  style={{ background: m.bg, padding: '20px', borderRadius: '24px', display: 'flex', alignItems: 'center', gap: '15px' }}
+                >
                    <div style={{ color: m.color }}>{m.icon}</div>
                    <div>
                       <div style={{ fontWeight: '800', color: '#0f172a', fontSize: '18px' }}>{m.title}</div>
                       <div style={{ fontSize: '12px', color: '#64748b' }}>{m.sub}</div>
                    </div>
-                </div>
+                </motion.div>
              ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Grid Content */}
@@ -224,7 +274,7 @@ const DoctorProfile = () => {
           <div>
             {/* Tabs */}
             <div style={{ position: 'sticky', top: '90px', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(20px)', padding: '10px', borderRadius: '20px', border: '1px solid #e2e8f0', marginBottom: '35px', display: 'flex', gap: '8px', zIndex: 10 }}>
-              {['overview', 'specialties', 'gallery', 'pricing', 'experience', 'faq'].map(tab => (
+              {['overview', 'specialties', 'gallery', 'pricing', 'faq'].map(tab => (
                  <button 
                    key={tab}
                    onClick={() => setActiveTab(tab)}
@@ -250,16 +300,21 @@ const DoctorProfile = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
               
               {/* Profile Bio */}
-              <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}
+              >
                 <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px', color: '#0f172a' }}>
-                  <User size={28} color="var(--primary)" fill="rgba(var(--primary-rgb), 0.1)" /> Professional Summary
+                  <User size={28} color="var(--primary)" fill="rgba(var(--primary-rgb), 0.1)" /> {t('doctor.professionalSummary')}
                 </h2>
                 <p style={{ whiteSpace: 'pre-line', color: '#475569', lineHeight: '1.8', fontSize: '17px', marginBottom: '30px' }}>
                   {doctor.about}
                 </p>
 
                 <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '25px', border: '1px solid #f1f5f9' }}>
-                   <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '20px' }}>Top Achievements</h3>
+                   <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '20px' }}>{t('doctor.topAchievements')}</h3>
                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                       {doctor.achievements.map((ach, i) => (
                         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '15px', color: '#334155' }}>
@@ -268,12 +323,17 @@ const DoctorProfile = () => {
                       ))}
                    </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Before & After Gallery */}
-              <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}
+              >
                 <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Camera size={28} color="var(--primary)" /> Transformation Gallery
+                  <Camera size={28} color="var(--primary)" /> {t('doctor.transformationGallery')}
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                   {doctor.gallery.map((item, i) => (
@@ -292,12 +352,17 @@ const DoctorProfile = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Specialist Treatments */}
-              <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}
+              >
                 <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <HeartPulse size={28} color="var(--primary)" /> Procedures & Specialties
+                  <HeartPulse size={28} color="var(--primary)" /> {t('doctor.procedures')}
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                   {doctor.specialties.map((spec, i) => (
@@ -307,7 +372,7 @@ const DoctorProfile = () => {
                   ))}
                 </div>
 
-                <h3 style={{ fontSize: '20px', fontWeight: '900', marginBottom: '20px', color: '#0f172a' }}>Detailed Price List</h3>
+                <h3 style={{ fontSize: '20px', fontWeight: '900', marginBottom: '20px', color: '#0f172a' }}>{t('doctor.detailedPrices')}</h3>
                 <div style={{ display: 'grid', gap: '15px' }}>
                    {doctor.procedures.map((proc, i) => (
                       <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '15px 25px', background: '#f8fafc', borderRadius: '15px', border: '1px solid #f1f5f9' }}>
@@ -319,17 +384,17 @@ const DoctorProfile = () => {
                       </div>
                    ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Education & Timeline */}
               <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
                 <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '35px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <GraduationCap size={28} color="var(--primary)" /> Resume & Education
+                  <GraduationCap size={28} color="var(--primary)" /> {t('doctor.resume')}
                 </h2>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
                    <div>
-                      <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '25px', color: '#64748b' }}>Experience</h3>
+                      <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '25px', color: '#64748b' }}>{t('doctor.experience')}</h3>
                       <div style={{ position: 'relative', paddingLeft: '24px', borderLeft: '2px solid #e2e8f0' }}>
                         {doctor.experience_timeline.map((item, i) => (
                           <div key={i} style={{ marginBottom: '30px', position: 'relative' }}>
@@ -342,7 +407,7 @@ const DoctorProfile = () => {
                       </div>
                    </div>
                    <div>
-                      <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '25px', color: '#64748b' }}>Academic</h3>
+                      <h3 style={{ fontSize: '18px', fontWeight: '800', marginBottom: '25px', color: '#64748b' }}>{t('doctor.academic')}</h3>
                       <div style={{ display: 'grid', gap: '25px' }}>
                         {doctor.education.map((edu, i) => (
                           <div key={i} style={{ display: 'flex', gap: '18px', alignItems: 'start' }}>
@@ -362,7 +427,7 @@ const DoctorProfile = () => {
               {/* Clinic Infrastructure Gallery */}
               <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
                 <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Building2 size={28} color="var(--primary)" /> Clinic Infrastructure
+                  <Building2 size={28} color="var(--primary)" /> {t('doctor.clinicInfra')}
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px' }}>
                   {doctor.clinic_images.map((img, i) => (
@@ -377,7 +442,7 @@ const DoctorProfile = () => {
               {/* Why Choose Section */}
               <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', padding: '45px', borderRadius: '35px', color: 'white' }}>
                  <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '30px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                   <ThumbsUp size={28} color="#fbbf24" /> Why Choose Dr. {doctor.name.split(' ')[1]}?
+                   <ThumbsUp size={28} color="#fbbf24" /> {t('doctor.whyChoose')} {doctor.name.split(' ')[1]}?
                  </h2>
                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                     {[
@@ -397,7 +462,7 @@ const DoctorProfile = () => {
               {/* FAQ */}
               <div style={{ background: 'white', padding: '45px', borderRadius: '35px', border: '1px solid #e2e8f0' }}>
                  <h2 style={{ fontSize: '28px', fontWeight: '900', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                   <MessageCircle size={28} color="var(--primary)" /> Frequently Asked Questions
+                   <MessageCircle size={28} color="var(--primary)" /> {t('doctor.faq')}
                  </h2>
                  <div style={{ display: 'grid', gap: '20px' }}>
                    {doctor.faq.map((item, i) => (
@@ -411,7 +476,7 @@ const DoctorProfile = () => {
 
               {/* Patient Journey */}
               <div style={{ background: '#f0f9ff', padding: '45px', borderRadius: '35px', border: '1px solid #e0f2fe', marginTop: '40px' }}>
-                 <h2 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '30px', textAlign: 'center', color: '#0f172a' }}>Treatment Journey with Dr. {doctor.name.split(' ')[1]}</h2>
+                 <h2 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '30px', textAlign: 'center', color: '#0f172a' }}>{t('doctor.treatmentJourney')}</h2>
                  <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr auto 1fr', alignItems: 'center', gap: '15px' }}>
                     <div style={{ textAlign: 'center' }}>
                        <div style={{ background: 'white', width: '60px', height: '60px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', border: '2px solid var(--primary)', color: 'var(--primary)', fontWeight: '900', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>1</div>
@@ -438,13 +503,13 @@ const DoctorProfile = () => {
 
           {/* Sidebar */}
           <div style={{ position: 'relative' }}>
-             <div style={{ position: 'sticky', top: '90px', display: 'flex', flexDirection: 'column', gap: '25px' }}>
+             <div style={{ position: 'sticky', top: '120px', display: 'flex', flexDirection: 'column', gap: '25px' }}>
                 
                 {/* Book Card */}
                 <div style={{ background: '#0f172a', padding: '35px', borderRadius: '35px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', color: 'white' }}>
                    <div style={{ textAlign: 'center', marginBottom: '30px' }}>
-                      <div style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '10px' }}>Estimated Treatment Cost</div>
-                      <div style={{ fontSize: '42px', fontWeight: '900', color: 'white' }}>{doctor.priceFrom} <span style={{ fontSize: '16px', color: '#64748b', fontWeight: '500' }}>/ start</span></div>
+                      <div style={{ fontSize: '13px', color: '#94a3b8', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '10px' }}>{t('doctor.estimatedCost')}</div>
+                      <div style={{ fontSize: '42px', fontWeight: '900', color: 'white' }}>{doctor.priceFrom} <span style={{ fontSize: '16px', color: '#64748b', fontWeight: '500' }}>/ {t('doctor.start')}</span></div>
                    </div>
 
                    <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)', margin: '0 0 30px' }} />
@@ -463,15 +528,17 @@ const DoctorProfile = () => {
                      ))}
                    </div>
 
-                   <button 
+                   <motion.button 
+                     whileHover={{ scale: 1.02 }}
+                     whileTap={{ scale: 0.98 }}
                      className="btn-primary" 
                      style={{ width: '100%', padding: '20px', fontSize: '16px', fontWeight: '900', boxShadow: 'none' }}
                      onClick={() => window.dispatchEvent(new CustomEvent('openClinicQuiz'))}
                    >
-                     Get A Free Quote
-                   </button>
+                     {t('doctor.getQuote')}
+                   </motion.button>
                    <p style={{ textAlign: 'center', fontSize: '11px', color: '#64748b', marginTop: '20px' }}>
-                     *Prices are estimates based on initial assessment. Final prices depend on tests and clinic selection.
+                     *Prices are estimates based on initial assessment.
                    </p>
                 </div>
 
@@ -479,12 +546,12 @@ const DoctorProfile = () => {
                 <div style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', padding: '30px', borderRadius: '35px', color: 'white', position: 'relative', overflow: 'hidden' }}>
                    <div style={{ position: 'relative', zIndex: 1 }}>
                       <PlayCircle size={40} style={{ marginBottom: '15px', opacity: 0.8 }} />
-                      <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '10px' }}>Video Consultation</h3>
+                      <h3 style={{ fontSize: '20px', fontWeight: '800', marginBottom: '10px' }}>{t('doctor.videoConsult')}</h3>
                       <p style={{ fontSize: '14px', opacity: 0.9, marginBottom: '20px', lineHeight: '1.5' }}>
-                        Talk to Dr. {doctor.name.split(' ')[1]} from your home. Get a second opinion before you travel.
+                        {t('doctor.videoDesc')}
                       </p>
                       <button style={{ background: 'white', color: '#2563eb', border: 'none', padding: '12px 25px', borderRadius: '100px', fontWeight: '800', fontSize: '13px', cursor: 'pointer' }}>
-                        Book Video Call
+                        {t('doctor.bookVideo')}
                       </button>
                    </div>
                    <div style={{ position: 'absolute', bottom: '-20px', right: '-20px', width: '150px', height: '150px', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}></div>

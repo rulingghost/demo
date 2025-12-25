@@ -17,25 +17,30 @@ import {
   Building2,
   MessageCircle
 } from 'lucide-react';
+import logo from '../assets/logo.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const footer = t('footer') || {};
+
   return (
     <footer style={{ background: 'var(--secondary)', color: 'white', padding: '80px 0 40px' }}>
-      <div className="container">
+      <div className="container" style={{ paddingTop: '40px' }}>
         
         {/* Trust Badges Bar */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap', paddingBottom: '60px', borderBottom: '1px solid rgba(255,255,255,0.1)', marginBottom: '60px' }}>
            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
              <ShieldCheck size={24} color="var(--primary)" />
-             <div style={{ fontSize: '12px', fontWeight: '700' }}>JCI ACCREDITED<br/><span style={{ color: '#94a3b8' }}>Partner Hospitals</span></div>
+             <div style={{ fontSize: '12px', fontWeight: '700' }}>{footer.badges?.jci?.title}<br/><span style={{ color: '#94a3b8' }}>{footer.badges?.jci?.desc}</span></div>
            </div>
            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
              <Globe size={24} color="var(--primary)" />
-             <div style={{ fontSize: '12px', fontWeight: '700' }}>GLOBAL REACH<br/><span style={{ color: '#94a3b8' }}>Patients from 92+ countries</span></div>
+             <div style={{ fontSize: '12px', fontWeight: '700' }}>{footer.badges?.global?.title}<br/><span style={{ color: '#94a3b8' }}>{footer.badges?.global?.desc}</span></div>
            </div>
            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
              <Award size={24} color="var(--primary)" />
-             <div style={{ fontSize: '12px', fontWeight: '700' }}>TOP 1% CLINICS<br/><span style={{ color: '#94a3b8' }}>Strict Selection Process</span></div>
+             <div style={{ fontSize: '12px', fontWeight: '700' }}>{footer.badges?.top?.title}<br/><span style={{ color: '#94a3b8' }}>{footer.badges?.top?.desc}</span></div>
            </div>
         </div>
 
@@ -43,12 +48,11 @@ const Footer = () => {
           
           {/* Brand Column */}
           <div style={{ gridColumn: 'span 1.5' }}>
-            <Link to="/" style={{ fontSize: '28px', fontWeight: '900', color: 'var(--primary)', marginBottom: '24px', display: 'block', letterSpacing: '-1px' }}>
-              SARFEA
+            <Link to="/" style={{ marginBottom: '24px', display: 'block' }}>
+              <img src={logo} alt="Doctora Logo" style={{ height: '60px', width: 'auto' }} />
             </Link>
             <p style={{ color: '#94a3b8', fontSize: '14px', lineHeight: '1.6', marginBottom: '24px', maxWidth: '300px' }}>
-              Sarfea is a global medical tourism platform connecting patients with the best medical care worldwide. 
-              Our service is 100% free for patients.
+              {footer.about}
             </p>
             <div style={{ display: 'flex', gap: '15px' }}>
               <div style={{ width: '40px', height: '40px', background: 'rgba(255,255,255,0.05)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}><Facebook size={20} /></div>
@@ -59,33 +63,30 @@ const Footer = () => {
 
           {/* Treatment Columns */}
           <div>
-            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>Top Treatments</h4>
+            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>{footer.treatments?.title}</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14px' }}>
-              <li><Link to="/search" style={{ color: '#94a3b8' }}>Dental Implants</Link></li>
-              <li><Link to="/search" style={{ color: '#94a3b8' }}>Hair Transplant</Link></li>
-              <li><Link to="/search" style={{ color: '#94a3b8' }}>Breast Augmentation</Link></li>
-              <li><Link to="/search" style={{ color: '#94a3b8' }}>In Vitro Fertilization</Link></li>
-              <li><Link to="/search" style={{ color: '#94a3b8' }}>All Treatments</Link></li>
+              {footer.treatments?.items && footer.treatments.items.map((item, i) => (
+                <li key={i}><Link to={i === 3 ? '/courses' : '/search'} style={{ color: i === 3 ? 'var(--primary)' : '#94a3b8', fontWeight: i === 3 ? '700' : 'normal' }}>{item}</Link></li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>Top Destinations</h4>
+            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>{footer.destinations?.title}</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '14px' }}>
-              <li><Link to="/turkey" style={{ color: '#94a3b8' }}>Turkey</Link></li>
-              <li><Link to="/thailand" style={{ color: '#94a3b8' }}>Thailand</Link></li>
-              <li><Link to="/mexico" style={{ color: '#94a3b8' }}>Mexico</Link></li>
-              <li><Link to="/germany" style={{ color: '#94a3b8' }}>Germany</Link></li>
-              <li><Link to="/search" style={{ color: '#94a3b8', fontWeight: '700', color: 'var(--primary)' }}>View All Countries</Link></li>
+              {footer.destinations?.items && footer.destinations.items.map((item, i) => (
+                <li key={i}><Link to={`/${item.toLowerCase()}`} style={{ color: '#94a3b8' }}>{item}</Link></li>
+              ))}
+              <li><Link to="/search" style={{ color: 'var(--primary)', fontWeight: '700' }}>{footer.destinations?.viewAll}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>Contact</h4>
+            <h4 style={{ color: 'white', marginBottom: '24px', fontSize: '16px' }}>{footer.contact?.title}</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '18px', fontSize: '14px' }}>
               <li style={{ display: 'flex', gap: '10px', color: '#94a3b8' }}>
                 <MapPin size={18} color="var(--primary)" />
-                <span>London Office:<br/>Baker St 221B, London, UK</span>
+                <span>{footer.contact?.office}<br/>{footer.contact?.address}</span>
               </li>
               <li style={{ display: 'flex', gap: '10px', color: '#94a3b8' }}>
                 <Phone size={18} color="var(--primary)" />
@@ -103,7 +104,7 @@ const Footer = () => {
               </li>
               <li style={{ display: 'flex', gap: '10px', color: '#94a3b8' }}>
                 <Mail size={18} color="var(--primary)" />
-                <span>support@sarfea.com</span>
+                <span>support@doctora.com</span>
               </li>
             </ul>
           </div>
@@ -112,7 +113,7 @@ const Footer = () => {
 
         {/* Global Hubs */}
         <div style={{ background: 'rgba(255,255,255,0.03)', padding: '30px', borderRadius: '24px', display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '60px' }}>
-           <h5 style={{ color: 'white', fontSize: '14px' }}>Our Global Support Hubs</h5>
+           <h5 style={{ color: 'white', fontSize: '14px' }}>{footer.hubs?.title}</h5>
            <div style={{ display: 'flex', gap: '40px', flexWrap: 'wrap' }}>
              {['London, UK', 'Istanbul, TR', 'Dubai, UAE', 'Kiev, UA', 'Berlin, DE'].map(city => (
                <div key={city} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '13px' }}>
@@ -125,13 +126,13 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           <p style={{ color: '#64748b', fontSize: '13px' }}>
-            © 2025 Sarfea Global Ltd. All rights reserved. <br className="show-mobile" />
-            Medical Disclaimer: Content is for information only.
+            {footer.copyright} <br className="show-mobile" />
+            {footer.disclaimer}
           </p>
           <div style={{ display: 'flex', gap: '30px', fontSize: '13px', color: '#64748b' }}>
-            <Link to="/safety" style={{ color: '#64748b' }}>Editorial Policy</Link>
-            <Link to="/safety" style={{ color: '#64748b' }}>Privacy Policy</Link>
-            <Link to="/safety" style={{ color: '#64748b' }}>Terms of Use</Link>
+            <Link to="/safety" style={{ color: '#64748b' }}>{footer.links?.editorial}</Link>
+            <Link to="/safety" style={{ color: '#64748b' }}>{footer.links?.privacy}</Link>
+            <Link to="/safety" style={{ color: '#64748b' }}>{footer.links?.terms}</Link>
           </div>
         </div>
       </div>
