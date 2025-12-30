@@ -2,78 +2,43 @@ import React from 'react';
 import { 
   Star, 
   MapPin, 
-  Search, 
-  Filter, 
-  CheckCircle, 
   Quote, 
   User, 
-  Building2, 
   ThumbsUp,
-  MessageSquare,
-  ChevronDown
+  GraduationCap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const reviews = [
   {
     id: 1,
-    name: 'Sarah J.',
-    country: 'United Kingdom',
-    procedure: '20 E-max Veneers',
-    clinic: 'Istanbul Aesthetic Center',
-    clinicId: 1,
+    name: 'Dr. Ahmet K.',
+    country: 'Türkiye',
+    course: 'Rhinoplasty Masterclass',
     rating: 5,
-    title: 'Life changing results!',
-    text: 'I was nervous about traveling for dental work, but Sarfea made everything so easy. From the airport pick-up to the final result, it was professional and welcoming.',
+    title: 'Mesleki kariyerimde dönüm noktası',
+    text: 'Dr. Ömer Buhşem\'in tekniklerini izlemek vizyonumu değiştirdi. Kadavra laboratuvarındaki pratik imkanları başka hiçbir yerde bulamamıştım.',
     date: 'Dec 12, 2024'
   },
   {
     id: 2,
-    name: 'Michael R.',
-    country: 'Germany',
-    procedure: 'Hair Transplant',
-    clinic: 'Bircan Clinic',
-    clinicId: 2,
+    name: 'Dr. Sarah Smith',
+    country: 'UK',
+    course: 'Hair Transplant Fellowship',
     rating: 5,
-    title: 'Excellent care and value',
-    text: 'Saved thousands of Euros compared to local clinics. The technology used was even more advanced. 6 months later and my results are amazing.',
+    title: 'World class training facility',
+    text: 'Travelled from London for this course. The facility is state of the art and the hands-on experience gave me the confidence to start my own clinic.',
     date: 'Nov 28, 2024'
   },
   {
     id: 3,
-    name: 'Elena D.',
-    country: 'Italy',
-    procedure: 'Rhinoplasty',
-    clinic: 'Medical Park Hospital',
-    clinicId: 3,
+    name: 'Op. Dr. Mehmet Y.',
+    country: 'Azerbaycan',
+    course: 'Facial Aesthetics',
     rating: 4,
-    title: 'Very professional but busy',
-    text: 'The surgeon was an artist. The hospital was like a 5-star hotel. Only downside was the clinic was very busy, so waiting times were a bit long.',
+    title: 'Çok yoğun ve verimli',
+    text: 'Eğitim süresi kısaydı ama içeriği çok doluydu. Canlı cerrahi yayınlarının kalitesi çok yüksekti.',
     date: 'Oct 15, 2024'
-  },
-  {
-    id: 4,
-    name: 'David W.',
-    country: 'USA',
-    procedure: 'Dental Implants',
-    clinic: 'Smile Center',
-    clinicId: 1,
-    rating: 5,
-    title: 'Top Notch Dental Work',
-    text: 'Travelled from Texas to Turkey. The coordinates handled everything. The savings were enough to pay for my vacation and more.',
-    date: 'Sept 20, 2024'
-  },
-  {
-    id: 5,
-    name: 'Sophia L.',
-    country: 'France',
-    procedure: 'IVF Treatment',
-    clinic: 'Bahçeci IVF Center',
-    clinicId: 4,
-    rating: 5,
-    title: 'Our dream came true',
-    text: 'The care and compassion we received was unmatched. The success rate and modern labs gave us the confidence we needed.',
-    date: 'Aug 05, 2024'
   }
 ];
 
@@ -85,9 +50,9 @@ const Reviews = () => {
         {/* Header Section */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '60px' }}>
           <div>
-            <h1 style={{ fontSize: '48px', marginBottom: '16px' }}>Patient Reviews</h1>
+            <h1 style={{ fontSize: '48px', marginBottom: '16px' }}>Mezun Hikayeleri</h1>
             <p style={{ fontSize: '18px', color: 'var(--text-muted)', maxWidth: '600px' }}>
-              Real stories from patients who found world-class care through Sarfea.
+              İki Teknik Akademi'den mezun olan meslektaşlarımızın deneyimleri.
             </p>
           </div>
           <div className="glass" style={{ padding: '30px', borderRadius: '32px', textAlign: 'center' }}>
@@ -95,17 +60,8 @@ const Reviews = () => {
             <div style={{ display: 'flex', gap: '2px', justifyContent: 'center', margin: '10px 0' }}>
               {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />)}
             </div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '600' }}>Based on 6,000+ reviews</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '600' }}>6,000+ Mezun Değerlendirmesi</div>
           </div>
-        </div>
-
-        {/* Video Stories Promo */}
-        <div style={{ background: 'var(--secondary)', borderRadius: '32px', padding: '40px', color: 'white', marginBottom: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '30px' }}>
-          <div>
-            <h2 style={{ color: 'white', marginBottom: '10px' }}>Watch Video Testimonials</h2>
-            <p style={{ color: '#94a3b8' }}>See the results for yourself in our high-quality video interviews.</p>
-          </div>
-          <button className="btn-primary" style={{ padding: '16px 40px' }}>Watch Stories</button>
         </div>
 
         {/* Reviews Grid */}
@@ -114,8 +70,8 @@ const Reviews = () => {
             <div key={review.id} className="glass card-hover" style={{ padding: '40px', borderRadius: '32px', display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '25px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  <div style={{ width: '56px', height: '56px', borderRadius: '28px', background: 'var(--surface)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <User size={28} color="var(--text-muted)" />
+                  <div style={{ width: '56px', height: '56px', borderRadius: '28px', background: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--primary)' }}>
+                    <GraduationCap size={28} />
                   </div>
                   <div>
                     <div style={{ fontWeight: '800', fontSize: '18px' }}>{review.name}</div>
@@ -144,14 +100,11 @@ const Reviews = () => {
 
               <div style={{ marginTop: '30px', borderTop: '1px solid var(--border)', paddingTop: '25px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                   <div style={{ fontSize: '11px', color: 'var(--primary)', fontWeight: '800', textTransform: 'uppercase', marginBottom: '4px' }}>Treatment</div>
-                   <div style={{ fontSize: '14px', fontWeight: '700' }}>{review.procedure}</div>
-                   <Link to="/search" style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
-                     at <span style={{ color: 'var(--secondary)', textDecoration: 'underline' }}>{review.clinic}</span>
-                   </Link>
+                   <div style={{ fontSize: '11px', color: 'var(--primary)', fontWeight: '800', textTransform: 'uppercase', marginBottom: '4px' }}>Tamamlanan Eğitim</div>
+                   <div style={{ fontSize: '14px', fontWeight: '700' }}>{review.course}</div>
                 </div>
                 <button style={{ background: '#f8fafc', border: '1px solid var(--border)', padding: '8px 16px', borderRadius: '12px', fontSize: '12px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
-                  <ThumbsUp size={14} /> Helpful
+                  <ThumbsUp size={14} /> Faydalı ({Math.floor(Math.random() * 20) + 1})
                 </button>
               </div>
             </div>

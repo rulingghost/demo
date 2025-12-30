@@ -6,7 +6,7 @@ const faqData = [
   {
     category: 'General',
     questions: [
-      { q: 'Is Sarfea free for patients?', a: 'Yes! Our service is completely free for patients. We receive commissions from clinics, so you never pay extra for using Sarfea. In many cases, you even get lower prices through us.' },
+      { q: 'Is Doctora free for patients?', a: 'Yes! Our service is completely free for patients. We receive commissions from clinics, so you never pay extra for using Doctora. In many cases, you even get lower prices through us.' },
       { q: 'How do I know if a clinic is good?', a: 'We manually verify every clinic. We check for international accreditations (like JCI or ISO), doctor certifications, and actual patient reviews. We also perform on-site audits.' },
       { q: 'Can you help with my visa?', a: 'Yes, we provide medical invitation letters that can assist you in obtaining a medical visa for your treatment abroad.' }
     ]
@@ -15,7 +15,7 @@ const faqData = [
     category: 'Treatments & Pricing',
     questions: [
       { q: 'Are prices fixed?', a: 'Most of our "All-inclusive" packages have fixed prices. For complex surgeries, the final price is confirmed after the surgeon reviews your medical records or photos.' },
-      { q: 'How do I pay?', a: 'Typically, you pay a small deposit through Sarfea to secure your booking, and the remaining balance is paid directly to the clinic upon arrival.' },
+      { q: 'How do I pay?', a: 'Typically, you pay a small deposit through Doctora to secure your booking, and the remaining balance is paid directly to the clinic upon arrival.' },
       { q: 'Does insurance cover medical tourism?', a: 'It depends on your provider. Some international insurance plans cover treatments abroad. We can provide all necessary documentation for reimbursement claims.' }
     ]
   },
@@ -23,7 +23,7 @@ const faqData = [
     category: 'Travel & Aftercare',
     questions: [
       { q: 'Do I need a companion?', a: 'For major surgeries (like rhinoplasty or BBL), we highly recommend bringing a friend or family member. However, our local "Patient Concierge" will assist you if you travel alone.' },
-      { q: 'What happens if there are complications?', a: 'Your safety is our priority. All our partner clinics have emergency protocols. Additionally, Sarfea offers an optional "Medical Travel Shield" insurance that covers corrective treatments.' },
+      { q: 'What happens if there are complications?', a: 'Your safety is our priority. All our partner clinics have emergency protocols. Additionally, Doctora offers an optional "Medical Travel Shield" insurance that covers corrective treatments.' },
       { q: 'How long should I stay?', a: 'Stay duration varies by procedure. Hair transplants usually require 3 days, while major plastic surgery might need 7-10 days for initial recovery and check-ups.' }
     ]
   }

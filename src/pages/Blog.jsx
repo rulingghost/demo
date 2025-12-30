@@ -56,7 +56,7 @@ const Blog = () => {
       title: "Safety First: Preparing for Medical Travel Post-Pandemic",
       excerpt: "Essential checklist for insurance, documentation, and choosing safe destinations for 2025.",
       category: "Safety",
-      author: "Sarfea Medical Team",
+      author: "Doctora Medical Team",
       date: "May 5, 2025",
       readTime: "6 min read",
       img: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80&w=800",

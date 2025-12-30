@@ -48,16 +48,16 @@ const MedicalBoard = () => {
           {doctors.map((doc, i) => {
             // Map doctor names to their IDs
             const doctorIds = {
-              'Op. Dr. Ömer Buhşem': 'omer-buhsem',
-              'Dr. Ergin Er': 'tarik-akar',
-              'Dr. Sarah Wilson': 'bulent-cihantimur',
-              'Dr. Mark Thompson': 'tarik-akar'
+              'Op. Dr. Ömer Buhşem': 'instructor-1',
+              'Dr. Ergin Er': 'instructor-1',
+              'Dr. Sarah Wilson': 'consultant-1',
+              'Dr. Mark Thompson': 'consultant-1'
             };
             
             return (
               <Link 
                 key={i}
-                to={`/doctor/${doctorIds[doc.name] || 'omer-buhsem'}`}
+                to={`/doctor/${doctorIds[doc.name] || 'instructor-1'}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <motion.div 

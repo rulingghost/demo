@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Heart, Users, ShieldCheck, Globe, Star } from 'lucide-react';
+import { Target, Heart, Users, ShieldCheck, Globe, Award, GraduationCap, Video } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
@@ -7,104 +7,104 @@ const About = () => {
   const { language } = useLanguage();
   
   const content = language === 'tr' ? {
-    title: "Hastaları Güçlendiriyoruz, Hayatları Dönüştürüyoruz",
-    desc: "Doctora, hastaları dünyanın en iyi doktorları ve klinikleriyle buluşturan öncü bir sağlık turizmi platformudur. 2020'den bu yana 10.000'den fazla hastanın güvenli, uygun fiyatlı ve kaliteli sağlık hizmetine ulaşmasına yardımcı olduk.",
+    title: "Tıbbın Geleceğini Şekillendiriyoruz",
+    desc: "Doctora, tıp profesyonelleri için ileri düzey eğitimler ve hastalar için premium online danışmanlık hizmetleri sunan, teknoloji odaklı yeni nesil bir sağlık platformudur.",
     missionTitle: "Misyonumuz",
-    missionDesc: "Kaliteli sağlık hizmetinin bir lüks olmaması gerektiğine inanıyoruz. Misyonumuz, sağlık fiyatlandırmasında ve kalitesinde şeffaflık sağlayarak, her hastanın kendi sağlığı için en iyi kararı vermesi için ihtiyaç duyduğu bilgi ve desteğe sahip olmasını sağlamaktır.",
+    missionDesc: "Tıbbi bilgiye erişimi demokratikleştirmeyi ve coğrafi sınırları kaldırarak uzman hekim görüşünü herkes için ulaşılabilir kılmayı hedefliyoruz. Eğitimden tedaviye, mükemmeliyetin peşindeyiz.",
     values: [
-      { title: 'Şeffaflık', desc: 'Gizli ücret yok. Kliniğe doğrudan ödeme yaparsınız.' },
-      { title: 'Bakım', desc: 'Sizin için 24/7 kişisel koordinatör.' },
-      { title: 'Güvenilirlik', desc: 'Sadece JCI belgeli ve onaylı klinikler.' }
+      { title: 'Akademik Mükemmellik', desc: 'Dünya standartlarında müfredat ve eğitmen kadrosu.', icon: <GraduationCap /> },
+      { title: 'Teknolojik İnovasyon', desc: 'Hibrit eğitim modelleri ve güvenli tele-tıp altyapısı.', icon: <Video /> },
+      { title: 'Global Erişim', desc: 'Dünyanın her yerinden doktor ve hastalara hizmet.', icon: <Globe /> }
     ]
   } : {
-    title: "Empowering Patients, Transforming Lives",
-    desc: "Sarfea is a leading global medical tourism platform that connects patients with the world's best doctors and clinics. Since 2020, we have helped over 10,000 patients find safe, affordable, and high-quality medical care abroad.",
+    title: "Shaping the Future of Medicine",
+    desc: "Doctora is a technology-driven health platform offering advanced medical training for professionals and premium online consultation services for patients.",
     missionTitle: "Our Mission",
-    missionDesc: "We believe that high-quality healthcare shouldn't be a luxury. Our mission is to provide transparency in medical pricing and quality, ensuring that every patient has the information and support they need to make the best decision for their health.",
+    missionDesc: "We aim to democratize access to medical knowledge and make expert medical opinions accessible to everyone by removing geographical barriers. From education to treatment, we pursue excellence.",
     values: [
-      { title: 'Transparency', desc: 'No hidden fees. You pay the clinic directly.' },
-      { title: 'Care', desc: 'Personal coordinator available 24/7 for you.' },
-      { title: 'Reliability', desc: 'Only JCI-accredited and verified clinics.' }
+      { title: 'Academic Excellence', desc: 'World-class curriculum and instructor staff.', icon: <GraduationCap /> },
+      { title: 'Technological Innovation', desc: 'Hybrid education models and secure telemedicine infrastructure.', icon: <Video /> },
+      { title: 'Global Reach', desc: 'Serving doctors and patients from all over the world.', icon: <Globe /> }
     ]
   };
 
   return (
-    <div style={{ paddingTop: '120px' }}>
-      <section className="section">
+    <div style={{ paddingTop: '120px', background: '#f8fafc', minHeight: '100vh' }}>
+      {/* Hero Section */}
+      <section className="section" style={{ paddingBottom: '60px' }}>
         <div className="container" style={{ textAlign: 'center', maxWidth: '900px' }}>
-          <h1 style={{ fontSize: '56px', fontWeight: '800', marginBottom: '24px' }}>{content.title}</h1>
-          <p style={{ fontSize: '20px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: '#eff6ff', color: 'var(--primary)', padding: '8px 20px', borderRadius: '100px', fontWeight: '700', fontSize: '14px', marginBottom: '30px' }}>
+             <Award size={18} /> {language === 'tr' ? 'Öncü Tıp Platformu' : 'Leading Medical Platform'}
+          </div>
+          <h1 style={{ fontSize: '56px', fontWeight: '900', marginBottom: '30px', color: '#0f172a', lineHeight: '1.2' }}>{content.title}</h1>
+          <p style={{ fontSize: '20px', color: '#64748b', lineHeight: '1.7' }}>
             {content.desc}
           </p>
         </div>
       </section>
 
-      <section style={{ background: 'var(--surface)', padding: '80px 0' }}>
+      {/* Stats & Visual */}
+      <section style={{ padding: '0 0 100px' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" 
-                alt="Our Office" 
-                style={{ width: '100%', borderRadius: '32px', boxShadow: 'var(--shadow-xl)' }}
-              />
-            </div>
-            <div>
-              <h2 style={{ fontSize: '36px', marginBottom: '24px' }}>{content.missionTitle}</h2>
-              <p style={{ fontSize: '18px', color: 'var(--text-muted)', marginBottom: '32px', lineHeight: '1.7' }}>
-                {content.missionDesc}
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                {content.values.map(item => (
-                  <div key={item.title} style={{ display: 'flex', gap: '16px' }}>
-                    <div style={{ padding: '12px', background: 'white', borderRadius: '12px', height: 'fit-content', color: 'var(--primary)' }}>
-                      {item.title === 'Şeffaflık' || item.title === 'Transparency' ? <ShieldCheck /> : item.title === 'Bakım' || item.title === 'Care' ? <Heart /> : <Users />}
+           <div style={{ position: 'relative', borderRadius: '40px', overflow: 'hidden', height: '500px', marginBottom: '80px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1600" alt="Medical Team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent)' }}></div>
+              <div style={{ position: 'absolute', bottom: '60px', left: '60px', right: '60px', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '40px' }}>
+                 <div>
+                    <h2 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '10px', color: 'white' }}>{content.missionTitle}</h2>
+                    <p style={{ fontSize: '18px', maxWidth: '600px', lineHeight: '1.6', opacity: 0.9 }}>{content.missionDesc}</p>
+                 </div>
+                 <div style={{ display: 'flex', gap: '30px' }}>
+                    <div>
+                       <div style={{ fontSize: '42px', fontWeight: '900', color: '#38bdf8' }}>50+</div>
+                       <div style={{ fontSize: '14px', fontWeight: '600', opacity: 0.8 }}>{language === 'tr' ? 'Eğitmen Doktor' : 'Instructors'}</div>
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '18px', marginBottom: '4px' }}>{item.title}</h4>
-                      <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>{item.desc}</p>
+                       <div style={{ fontSize: '42px', fontWeight: '900', color: '#38bdf8' }}>2.5k</div>
+                       <div style={{ fontSize: '14px', fontWeight: '600', opacity: 0.8 }}>{language === 'tr' ? 'Mezun' : 'Alumni'}</div>
                     </div>
-                  </div>
-                ))}
+                    <div>
+                       <div style={{ fontSize: '42px', fontWeight: '900', color: '#38bdf8' }}>10k+</div>
+                       <div style={{ fontSize: '14px', fontWeight: '600', opacity: 0.8 }}>{language === 'tr' ? 'Online Görüşme' : 'Consultations'}</div>
+                    </div>
+                 </div>
               </div>
-            </div>
-          </div>
+           </div>
+
+           {/* Values Grid */}
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px' }}>
+              {content.values.map((val, i) => (
+                 <div key={i} className="glass" style={{ padding: '40px', borderRadius: '32px', textAlign: 'center', transition: 'transform 0.3s' }}>
+                    <div style={{ width: '80px', height: '80px', background: 'var(--primary)', color: 'white', borderRadius: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px', boxShadow: '0 10px 25px -5px rgba(0, 122, 255, 0.4)' }}>
+                       {React.cloneElement(val.icon, { size: 36 })}
+                    </div>
+                    <h3 style={{ fontSize: '24px', fontWeight: '800', marginBottom: '15px' }}>{val.title}</h3>
+                    <p style={{ color: '#64748b', lineHeight: '1.6' }}>{val.desc}</p>
+                 </div>
+              ))}
+           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <h2 style={{ fontSize: '36px' }}>{language === 'tr' ? 'Küresel Erişebilirlik' : 'Our Global Reach'}</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px', textAlign: 'center' }}>
-             <div>
-                <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)' }}>25+</div>
-                <div style={{ color: 'var(--text-muted)' }}>{language === 'tr' ? 'Hizmet Verilen Ülke' : 'Countries Covered'}</div>
-             </div>
-             <div>
-                <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)' }}>1,200+</div>
-                <div style={{ color: 'var(--text-muted)' }}>{language === 'tr' ? 'Onaylı Klinik' : 'Verified Clinics'}</div>
-             </div>
-             <div>
-                <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)' }}>15k+</div>
-                <div style={{ color: 'var(--text-muted)' }}>{language === 'tr' ? 'Mutlu Hasta' : 'Happy Patients'}</div>
-             </div>
-             <div>
-                <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)' }}>4.9/5</div>
-                <div style={{ color: 'var(--text-muted)' }}>{language === 'tr' ? 'Memnuniyet Puanı' : 'Trustpilot Rating'}</div>
-             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ background: 'var(--secondary)', color: 'white', textAlign: 'center' }}>
+      {/* CTA Section */}
+      <section style={{ padding: '100px 0', background: '#0f172a', color: 'white', textAlign: 'center' }}>
           <div className="container">
-              <h2 style={{ color: 'white', fontSize: '36px', marginBottom: '24px' }}>{language === 'tr' ? 'Uzman Bakım Bir Tık Uzağınızda' : 'Expert Care is Just a Click Away'}</h2>
-              <p style={{ color: '#94a3b8', fontSize: '18px', maxWidth: '600px', margin: '0 auto 32px' }}>
-                {language === 'tr' ? 'Medikal yolculuklarında Doctora\'ya güvenen binlerce hastaya katılın.' : 'Join thousands of patients who trust Doctora for their medical journey.'}
+              <h2 style={{ color: 'white', fontSize: '42px', fontWeight: '900', marginBottom: '24px' }}>
+                {language === 'tr' ? 'Gelişime Hazır Mısınız?' : 'Ready to Evolve?'}
+              </h2>
+              <p style={{ color: '#94a3b8', fontSize: '20px', maxWidth: '700px', margin: '0 auto 40px' }}>
+                {language === 'tr' 
+                  ? 'İster kariyerinizi ilerletmek isteyen bir doktor olun, ister uzman görüşü arayan bir hasta.' 
+                  : 'Whether you are a doctor looking to advance your career or a patient seeking expert opinion.'}
               </p>
-              <Link to="/contact" className="btn-primary" style={{ padding: '16px 48px' }}>{language === 'tr' ? 'Yolculuğa Başla' : 'Start Your Journey'}</Link>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+                 <Link to="/courses" className="btn-primary" style={{ padding: '18px 40px', fontSize: '16px' }}>
+                    {language === 'tr' ? 'Kursları İncele' : 'Explore Courses'}
+                 </Link>
+                 <Link to="/second-opinion" className="btn-outline" style={{ padding: '18px 40px', fontSize: '16px', background: 'transparent', color: 'white', borderColor: 'rgba(255,255,255,0.2)' }}>
+                    {language === 'tr' ? 'Online Randevu Al' : 'Book Online Consult'}
+                 </Link>
+              </div>
           </div>
       </section>
     </div>

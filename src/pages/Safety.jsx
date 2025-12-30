@@ -8,11 +8,11 @@ const Safety = () => {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <header style={{ textAlign: 'center', marginBottom: '80px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontWeight: '700', fontSize: '14px', marginBottom: '16px' }}>
-              <Shield size={20} /> SARFEA SAFETY PROTOCOL
+              <Shield size={20} /> DOCTORA SAFETY PROTOCOL
             </div>
             <h1 style={{ fontSize: '52px', fontWeight: '800', marginBottom: '24px' }}>Patient Safety & Quality Guarantee</h1>
             <p style={{ fontSize: '18px', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-              We take the responsibility of your health seriously. Every clinic on Sarfea undergoes a rigorous 14-step verification process before being listed.
+              We take the responsibility of your health seriously. Every clinic on Doctora undergoes a rigorous 14-step verification process before being listed.
             </p>
           </header>
 

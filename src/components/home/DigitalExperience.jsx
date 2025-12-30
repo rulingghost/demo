@@ -36,7 +36,7 @@ const DigitalExperience = () => {
               Tedavi Süreciniz <span style={{ color: '#38bdf8' }}>Cebinizde</span>
             </h2>
             <p style={{ color: '#94a3b8', fontSize: '18px', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
-              Sarfea Mobile uygulaması ile randevularınızı yönetin, doktorunuzla görüntülü görüşün ve iyileşme sürecinizi yapay zeka desteğiyle takip edin.
+              Doctora Mobile uygulaması ile randevularınızı yönetin, doktorunuzla görüntülü görüşün ve iyileşme sürecinizi yapay zeka desteğiyle takip edin.
             </p>
         </div>
 

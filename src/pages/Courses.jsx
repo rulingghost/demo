@@ -14,150 +14,124 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocation, Link } from 'react-router-dom';
 
 const Courses = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('Tümü');
   const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
 
-  const categories = ['All', 'Plastic Surgery', 'Fillers & Botox', 'Hair Transplant', 'Clinic Ops'];
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const q = params.get('q');
+    if (q) {
+      setSearchQuery(q);
+    }
+  }, [location.search]);
+
+  const categories = ['Tümü', 'Estetik Cerrahi', 'Dolgu & Botoks', 'Saç Ekimi', 'Klinik Yönetimi'];
 
   const courses = [
     {
       id: 1,
-      title: "Rhinoplasty Planning & Case Review",
-      description: "Pre-op analysis, aesthetic goals, functional considerations, and outcome planning.",
-      category: "Plastic Surgery",
-      level: "Advanced",
-      startDate: "Feb 08, 2026",
-      price: "€249",
-      duration: "6 hours (self-paced)",
-      seats: "120",
-      tags: ["Nasal analysis", "Aesthetic planning", "Complications"]
+      title: "Masterclass: İleri Seviye Rinoplasti & Hassas Şekillendirme",
+      description: "Karmaşık burun deformiteleri, revizyon teknikleri ve yapısal koruma üzerine ustalık sınıfı.",
+      category: "Estetik Cerrahi",
+      level: "Master Seviyesi",
+      startDate: "08 Şub 2026",
+      price: "€2,450",
+      duration: "3 Gün (Canlı Cerrahi)",
+      seats: "15",
+      tags: ["Canlı Cerrahi", "Revizyon", "Master Sertifika"]
     },
     {
       id: 2,
-      title: "Facelift Fundamentals & Complication Management",
-      description: "Anatomy-focused planning, patient selection, and risk reduction strategies.",
-      category: "Plastic Surgery",
-      level: "Intermediate",
-      startDate: "Mar 01, 2026",
-      price: "€199",
-      duration: "5 hours",
-      seats: "90",
-      tags: ["SMAS concepts", "Patient selection", "Safety"]
+      title: "Fellowship: Yüz Enjeksiyonları ve İleri Anatomi",
+      description: "Kadavra üzerinde anatomi eğitimi ve canlı model uygulamalarıyla 3 aylık yoğun fellowship programı.",
+      category: "Dolgu & Botoks",
+      level: "Fellowship",
+      startDate: "01 Mar 2026",
+      price: "€5,500",
+      duration: "3 Ay",
+      seats: "6",
+      tags: ["Kadavra Eğitimi", "Hands-on", "Diploma"]
     },
     {
       id: 3,
-      title: "Breast Aesthetics: Planning, Sizing & Follow-up",
-      description: "Case selection, implant sizing logic, post-op follow-up, and complication pathways.",
-      category: "Plastic Surgery",
-      level: "Intermediate",
-      startDate: "Jan 18, 2026",
-      price: "€179",
-      duration: "4.5 hours",
-      seats: "80",
-      tags: ["Sizing", "Aftercare", "Capsular contracture"]
+      title: "Masterclass: Endoskopik Yüz Germe ve Gençleştirme",
+      description: "Minimal invaziv derin plan yüz germe ve endoskopik kaş kaldırma teknikleri.",
+      category: "Estetik Cerrahi",
+      level: "İleri Seviye",
+      startDate: "18 Oca 2026",
+      price: "€3,200",
+      duration: "2 Gün",
+      seats: "10",
+      tags: ["Derin Plan", "Endoskopi", "Video Kütüphanesi"]
     },
     {
       id: 4,
-      title: "Liposuction & Body Contouring: Case Selection",
-      description: "Planning, safety, expectations, and post-op monitoring (case-based).",
-      category: "Plastic Surgery",
-      level: "Beginner",
-      startDate: "Feb 22, 2026",
-      price: "€149",
-      duration: "4 hours",
-      seats: "140",
-      tags: ["Patient selection", "Safety checklist", "Aftercare"]
+      title: "Sertifikasyon: Saç Ekimi ve Saç Sağlığı Yönetimi",
+      description: "FUE, DHI teknikleri ve greft canlılığı üzerine kapsamlı uluslararası sertifika programı.",
+      category: "Saç Ekimi",
+      level: "Profesyonel",
+      startDate: "22 Şub 2026",
+      price: "€1,800",
+      duration: "5 Gün",
+      seats: "20",
+      tags: ["FUE & DHI", "Greft Analizi", "ISO Sertifikası"]
     },
     {
       id: 5,
-      title: "Blepharoplasty: Pre-op Assessment & Outcomes",
-      description: "Assessment framework, expected outcomes, and common pitfalls.",
-      category: "Plastic Surgery",
-      level: "Beginner",
-      startDate: "Apr 05, 2026",
-      price: "€129",
-      duration: "3.5 hours",
-      seats: "110",
-      tags: ["Assessment", "Risks", "Follow-up"]
+      title: "Masterclass: Meme Estetiğinde Kompozit Yaklaşımlar",
+      description: "İmplant ve yağ transferi kombinasyonları (Hibrit) ile doğal sonuçlar elde etme sanatı.",
+      category: "Estetik Cerrahi",
+      level: "İleri Seviye",
+      startDate: "05 Nis 2026",
+      price: "€1,950",
+      duration: "1 Gün",
+      seats: "25",
+      tags: ["Hibrit Teknikler", "Güvenlik", "Komplikasyon Yönetimi"]
     },
     {
       id: 6,
-      title: "Complications in Aesthetic Surgery: Early Recognition",
-      description: "Red flags, escalation pathways, and structured documentation.",
-      category: "Safety",
-      level: "Essential",
-      startDate: "Jan 11, 2026",
-      price: "€99",
-      duration: "3 hours",
-      seats: "200",
-      tags: ["Infection", "Hematoma", "Documentation"]
+      title: "Güvenlik Sempozyumu: Estetik Tıpta Komplikasyon Yönetimi",
+      description: "Vasküler oklüzyon, körlük riski ve acil durum protokolleri üzerine küresel konsensüs eğitimi.",
+      category: "Güvenlik",
+      level: "Zorunlu",
+      startDate: "11 Oca 2026",
+      price: "€450",
+      duration: "1 Gün",
+      seats: "100",
+      tags: ["Acil Protokoller", "Vaka Analizi", "Yasal Koruma"]
     },
     {
       id: 7,
-      title: "Botulinum Toxin: Patient Selection & Aftercare",
-      description: "Assessment, consent, expectations, and post-treatment care (theory-based).",
-      category: "Fillers & Botox",
-      level: "Injectables",
-      startDate: "Feb 15, 2026",
-      price: "€119",
-      duration: "3.5 hours",
-      seats: "160",
-      tags: ["Consent", "Aftercare", "Adverse events"]
+      title: "Workshop: Dudak ve Perioral Bölge Sanatı",
+      description: "Rus tekniği, doğal kontur ve asimetri düzeltme üzerine uygulamalı atölye çalışması.",
+      category: "Dolgu & Botoks",
+      level: "Uygulamalı",
+      startDate: "15 Şub 2026",
+      price: "€850",
+      duration: "1 Gün",
+      seats: "12",
+      tags: ["Rus Tekniği", "Kanül Kullanımı", "Sanatsal Yaklaşım"]
     },
     {
       id: 8,
-      title: "Dermal Fillers: Anatomy, Safety & Complication Response",
-      description: "Risk zones, safety protocols, and complication pathways (case-based).",
-      category: "Fillers & Botox",
-      level: "Injectables",
-      startDate: "Mar 16, 2026",
-      price: "€149",
-      duration: "4 hours",
-      seats: "140",
-      tags: ["Anatomy", "Safety", "Complications"]
-    },
-    {
-      id: 9,
-      title: "Hair Transplant Foundations: Assessment & Patient Journey",
-      description: "Patient evaluation, planning logic, and post-procedure aftercare pathway.",
-      category: "Hair Transplant",
-      level: "Beginner",
-      startDate: "Jan 25, 2026",
-      price: "€129",
-      duration: "4 hours",
-      seats: "180",
-      tags: ["Assessment", "Planning", "Aftercare"]
-    },
-    {
-      id: 10,
-      title: "Hair Transplant Complications: Prevention & Follow-up",
-      description: "Common issues, early recognition, and structured patient communication.",
-      category: "Hair Transplant",
-      level: "Intermediate",
-      startDate: "Apr 19, 2026",
-      price: "€119",
-      duration: "3.5 hours",
-      seats: "120",
-      tags: ["Risk reduction", "Follow-up", "Documentation"]
-    },
-    {
-      id: 11,
-      title: "International Patient Workflow: Intake -> Consult -> Aftercare",
-      description: "CRM-style pipeline, messaging templates, consent flow, and follow-up cadence.",
-      category: "Clinic Ops",
-      level: "Clinic Ops",
-      startDate: "Feb 02, 2026",
-      price: "€89",
-      duration: "2.5 hours",
-      seats: "240",
-      tags: ["CRM pipeline", "Scripts", "Coordination"]
+      title: "Mini-MBA: Estetik Klinik Yönetimi ve Büyüme Stratejileri",
+      description: "Klinik işletmeciliği, hasta deneyimi yönetimi ve küresel marka oluşturma eğitimi.",
+      category: "Klinik Yönetimi",
+      level: "Yönetici",
+      startDate: "02 Şub 2026",
+      price: "€1,200",
+      duration: "4 Hafta (Online)",
+      seats: "50",
+      tags: ["Medical Marketing", "Finans", "Liderlik"]
     }
   ];
 
   const filteredCourses = courses.filter(course => {
-    const matchesCategory = activeCategory === 'All' || course.category === activeCategory;
+    const matchesCategory = activeCategory === 'Tümü' || course.category === activeCategory;
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                          course.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -175,7 +149,7 @@ const Courses = () => {
                 animate={{ opacity: 1, x: 0 }}
                 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontWeight: '800', fontSize: '24px', marginBottom: '16px' }}
               >
-                Sarfea Academy <span style={{ color: '#94a3b8', fontWeight: '400' }}>— Kurslar</span>
+                Doctora Academy <span style={{ color: '#94a3b8', fontWeight: '400' }}>— Kurslar</span>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0, x: -20 }}
@@ -248,7 +222,7 @@ const Courses = () => {
                   cursor: 'pointer'
                 }}
               >
-                {cat === 'All' ? 'Tümü' : cat}
+                {cat}
               </button>
             ))}
           </div>
@@ -355,21 +329,26 @@ const Courses = () => {
 
               {/* Actions */}
               <div style={{ display: 'flex', gap: '12px', marginTop: 'auto', paddingTop: '10px' }}>
-                <button style={{ 
-                  flex: '1', 
-                  padding: '12px', 
-                  borderRadius: '12px', 
-                  background: 'none', 
-                  border: '1px solid #e2e8f0', 
-                  fontSize: '14px', 
-                  fontWeight: '700', 
-                  color: '#475569',
-                  cursor: 'pointer',
-                  transition: 'background 0.2s'
-                }}>
-                  Müfredatı Gör
-                </button>
-                <button 
+                <Link 
+                  to={course.level === 'Fellowship' ? '/fellowship' : '/treatment/dermal-filler'}
+                  style={{ 
+                    flex: '1', 
+                    padding: '12px', 
+                    borderRadius: '12px', 
+                    background: 'none', 
+                    border: '1px solid #e2e8f0', 
+                    fontSize: '14px', 
+                    fontWeight: '700', 
+                    color: '#475569',
+                    cursor: 'pointer',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    transition: 'background 0.2s'
+                  }}>
+                  {course.level === 'Fellowship' ? 'Program Detayı' : 'Müfredatı Gör'}
+                </Link>
+                <Link 
+                  to={`/contact?type=enroll&course=${encodeURIComponent(course.title)}`}
                   className="btn-primary"
                   style={{ 
                     flex: '1.2', 
@@ -379,11 +358,12 @@ const Courses = () => {
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center', 
-                    gap: '8px' 
+                    gap: '8px',
+                    textDecoration: 'none'
                   }}
                 >
                   Kayıt Ol <ArrowRight size={16} />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}

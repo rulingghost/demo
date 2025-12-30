@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -22,6 +23,7 @@ const TreatmentDetail = lazy(() => import('./pages/TreatmentDetail'));
 const DoctorProfile = lazy(() => import('./pages/DoctorProfile'));
 const Doctors = lazy(() => import('./pages/Doctors'));
 const Courses = lazy(() => import('./pages/Courses'));
+const Fellowship = lazy(() => import('./pages/Fellowship'));
 const PatientDashboard = lazy(() => import('./pages/PatientDashboard'));
 import { ToastProvider } from './context/ToastContext';
 import ScrollToTopButton from './components/ScrollToTop';
@@ -76,6 +78,7 @@ const App = () => {
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/doctor" element={<Doctors />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/fellowship" element={<Fellowship />} />
             <Route path="/dashboard" element={<PatientDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

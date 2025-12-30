@@ -6,7 +6,7 @@ const LandingPage = ({ country = "Turkey" }) => {
   const [openFaq, setOpenFaq] = useState(null);
 
   const faqs = [
-    { q: 'Is it safe to travel for medical treatment?', a: 'Yes, if you choose JCI-accredited clinics. Sarfea only works with clinics that meet international safety standards.' },
+    { q: 'Is it safe to travel for medical treatment?', a: 'Yes, if you choose JCI-accredited clinics. Doctora only works with clinics that meet international safety standards.' },
     { q: 'How do I pay for my treatment?', a: 'Typically, a small deposit is paid online to secure the price, and the rest is paid at the clinic via credit card or cash.' },
     { q: 'Do doctors speak English?', a: 'Yes, all our partner clinics provide English-speaking doctors or dedicated medical interpreters.' },
   ];

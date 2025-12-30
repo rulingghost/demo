@@ -3,339 +3,338 @@ export const translations = {
     navbar: {
       home: "Ana Sayfa",
       findDoctor: "Doktor Bul",
-      treatments: "Tedaviler",
-      destinations: "Destinasyonlar",
-      hospitals: "Hastaneler",
+      treatments: "Eğitimler",
+      destinations: "Online Muayene",
+      hospitals: "Akademi",
       blog: "Blog",
       login: "Giriş Yap",
-      searchPlaceholder: "Tedavi, doktor veya ülke ara...",
-      forClinics: "Klinikler İçin",
-      getQuote: "Teklif Al"
+      searchPlaceholder: "Eğitim veya doktor ara...",
+      forClinics: "Eğitmenler İçin",
+      getQuote: "Kayıt Ol"
     },
     dashboard: {
       welcome: "Hoş geldin,",
-      upcomingAppts: "Yaklaşan Randevular",
-      medicalRecords: "Tıbbi Kayıtlar",
+      upcomingAppts: "Yaklaşan Dersler",
+      medicalRecords: "Sertifikalarım",
       messages: "Mesajlar",
       settings: "Ayarlar",
       logout: "Çıkış Yap",
-      noAppts: "Planlanmış randevunuz bulunmuyor.",
-      lastVisit: "Son Ziyaret",
+      noAppts: "Planlanmış eğitiminiz bulunmuyor.",
+      lastVisit: "Son İzlenen",
       viewProfile: "Profili Görüntüle",
-      myTreatmentPlan: "Tedavi Planım",
+      myTreatmentPlan: "Eğitim Programım",
       paymentStatus: "Ödeme Durumu",
-      support: "Canlı Destek",
+      support: "Öğrenci İşleri",
       notifications: "Bildirimler"
     },
     doctor: {
-      verified: "DOĞRULANMIŞ",
-      acceptingPatients: "YENİ HASTA KABUL EDİYOR",
-      bookConsult: "Ücretsiz Randevu Al",
+      verified: "ONAYLI EĞİTMEN",
+      acceptingPatients: "DERS VERİYOR",
+      bookConsult: "Randevu Al",
       askQuestion: "Soru Sor",
-      professionalSummary: "Profesyonel Özet",
+      professionalSummary: "Hakkında",
       topAchievements: "Başarılar",
-      transformationGallery: "Değişim Galerisi",
-      procedures: "İşlemler & Uzmanlıklar",
-      detailedPrices: "Detaylı Fiyat Listesi",
-      resume: "Özgeçmiş & Eğitim",
+      transformationGallery: "Vaka Galerisi",
+      procedures: "Uzmanlık Alanları",
+      detailedPrices: "Muayene Ücretleri",
+      resume: "Özgeçmiş & Akademik",
       experience: "Deneyim",
       academic: "Akademik",
-      clinicInfra: "Klinik Altyapısı",
+      clinicInfra: "Klinik / Ofis",
       whyChoose: "Neden Tercih Etmelisiniz?",
       faq: "Sıkça Sorulan Sorular",
-      treatmentJourney: "Tedavi Süreci",
-      estimatedCost: "Tahmini Tedavi Maliyeti",
-      start: "başlangıç",
-      getQuote: "Ücretsiz Teklif Al",
-      videoConsult: "Video Konsültasyon",
-      videoDesc: "Evinizden doktorunuzla görüşün. Seyahat etmeden önce ikinci bir görüş alın.",
-      bookVideo: "Video Görüşme Ayarla"
+      treatmentJourney: "Süreç Nasıl İşler?",
+      estimatedCost: "Muayene Ücreti",
+      start: "seans",
+      getQuote: "Randevu Oluştur",
+      videoConsult: "Online Görüşme",
+      videoDesc: "Evinizden uzman doktorla görüşün. Teşhis ve tedavi planlaması yapın.",
+      bookVideo: "Görüşme Başlat"
     },
     quiz: {
       step: "Adım",
       of: "/",
-      title: "Klinik Eşleştirme",
-      q1: "Hangi tedaviye ihtiyacınız var?",
-      q2: "Tercih ettiğiniz ülke?",
-      q3: "Tahmini bütçeniz?",
-      q4: "Sonuçları nereye gönderelim?",
+      title: "Uzman Eşleştirme",
+      q1: "Hangi branşta desteğe ihtiyacınız var?",
+      q2: "Şikayetiniz nedir?",
+      q3: "Daha önce tanı aldınız mı?",
+      q4: "Bize nasıl ulaşalım?",
       placeholderName: "Ad Soyad",
       placeholderEmail: "E-posta Adresi",
-      placeholderPhone: "Telefon No (WhatsApp)",
-      submit: "En İyi Kliniği Bul",
+      placeholderPhone: "Telefon No",
+      submit: "Uzman Bul",
       successTitle: "Talebiniz Alındı!",
-      successDesc: "Medikal koordinatörlerimiz dosyanızı inceliyor. 2-4 saat içinde size özel klinik önerilerini ileteceğiz.",
-      close: "Tamamdır, teşekkürler!",
-      prev: "Önceki Adım",
-      privacy: "Verileriniz korunmaktadır. HIPAA ve KVKK standartlarına uygun çalışıyoruz."
+      successDesc: "Uzmanlarımız durumunuzu inceliyor. En kısa sürede geri dönüş yapacağız.",
+      close: "Tamamdır",
+      prev: "Geri",
+      privacy: "Verileriniz KVKK kapsamında korunmaktadır."
     },
     search: {
-      heroTitle: "Dünyanın En İyi Kliniklerini Keşfedin",
-      heroSub: "Doctora ile 1,500+ doğrulanmış hastane, 6,000+ yorum ve %0 komisyon avantajı.",
-      placeholderTreatment: "Tedavi veya İşlem (örn. Saç Ekimi)",
-      placeholderLocation: "Ülke veya Şehir",
-      searchBtn: "Klinik Ara",
-      priceComparison: "Ülkelere Göre Fiyat Karşılaştırması",
+      heroTitle: "Uzman Doktorlardan Eğitim ve Danışmanlık",
+      heroSub: "İki Teknik ile kariyerinizi geliştirin veya sağlığınız için uzman görüşü alın.",
+      placeholderTreatment: "Branş veya Eğitim Adı",
+      placeholderLocation: "Uzmanlık",
+      searchBtn: "Ara",
+      priceComparison: "Eğitim Karşılaştırma",
       filters: "Filtreler",
-      specialties: "Uzmanlıklar",
-      priceRange: "Fiyat Aralığı",
-      applyFilters: "Filtreleri Uygula",
-      cantDecide: "Karar Veremediniz mi?",
-      chatWithExpert: "Uzmanla Sohbet Et",
-      expertOnline: "Koordinatörlerimiz çevrimiçi.",
-      found: "en iyi klinik bulundu",
+      specialties: "Branşlar",
+      priceRange: "Ücret Aralığı",
+      applyFilters: "Uygula",
+      cantDecide: "Kararsız mı kaldınız?",
+      chatWithExpert: "Asistanla Görüş",
+      expertOnline: "Online destek hattı.",
+      found: "sonuç bulundu",
       sort: {
         mostReviewed: "En Çok Değerlendirilen",
         priceLow: "Fiyat: Düşükten Yükseğe",
         priceHigh: "Fiyat: Yüksekten Düşüğe",
         bestRated: "En Yüksek Puanlı"
       },
-      verified: "Doctora Onaylı",
-      allInclusive: "Her Şey Dahil",
-      estimatedCost: "Tahmini Maliyet",
-      getFreeQuote: "Ücretsiz Teklif Al",
+      verified: "Doğrulanmış",
+      allInclusive: "Sertifikalı",
+      estimatedCost: "Ücret",
+      getFreeQuote: "Bilgi Al",
       details: "Detaylar",
       from: "başlayan",
-      stickyQuiz: "Klinik Eşleştirme"
+      stickyQuiz: "Uzman Bul"
     },
     hero: {
-      subtitle: "SAĞLIK SEYAHATİ KEŞİFÇİSİ",
-      title: "En İyi",
-      highlight: "Tedaviyi Bulun",
-      placeholderTreatment: "İşlem arayın...",
-      placeholderCountry: "Ülke seçin",
-      findClinics: "Klinikleri Bul",
-      excellentSupport: "Mükemmel Sağlık Destekçisi",
+      subtitle: "TIP EĞİTİMİ & TELE-TIP PLATFORMU",
+      title: "Geleceğin Tıbbını",
+      highlight: "Bugün Öğrenin",
+      placeholderTreatment: "Eğitim veya uzmanlık arayın...",
+      placeholderCountry: "İlgi alanı seçin",
+      findClinics: "Eğitimleri İncele",
+      excellentSupport: "Profesyonel Destek",
       quality: "Kalite",
-      cost: "Maliyet",
-      popularFields: "Popüler Alanlar",
-      verifiedClinics: "Onaylı Klinik",
-      getQuote: "Teklif Al",
+      cost: "Ücret",
+      popularFields: "Popüler Eğitimler",
+      verifiedClinics: "Uzman Eğitmen",
+      getQuote: "Başvur",
       procedures: [
-        "Saç Ekimi", "Rinoplasti", "Diş İmplantı", "Meme Büyütme", 
-        "Liposuction", "Diş Kaplama", "Tüp Bebek", "Tüp Mide", "BBL"
+        "Rinoplasti Masterclass", "Botoks & Dolgu", "Yüz Anatomisi", "Saç Ekimi Teknikleri", 
+        "Dermatolojik Cerrahi", "Medikal Estetik", "Lazer Tedavileri"
       ],
       countries: [
-        "Türkiye", "Tayland", "Almanya", "Meksika", "Güney Kore", "İspanya", "Polonya", "İngiltere"
+        "Plastik Cerrahi", "Dermatoloji", "Medikal Estetik", "Diş Hekimliği", "Genel Cerrahi"
       ]
     },
     home: {
       liveTicker: [
-        "🇬🇧 İngiltere'den John Saç Ekimi teklifi aldı (2dk önce)",
-        "🇩🇪 Almanya'dan Sarah Rinoplasti rezervasyonu yaptı (5dk önce)",
-        "🇺🇸 ABD'den Michael Onkoloji konsültasyonuna başladı (12dk önce)",
-        "🇫🇷 Fransa'dan Elena IVF fiyatlarını sordu (15dk önce)",
-        "🇪🇸 İspanya'dan Carlos Diş İmplantlarını inceliyor (18dk önce)"
+        "🎓 Dr. Ahmet K. Rinoplasti Masterclass'a kayıt oldu",
+        "📹 Ayşe Y. Online Dermatoloji görüşmesi başlattı",
+        "🎓 Dr. Sarah M. Botoks eğitimini tamamladı",
+        "📹 Mehmet T. İkinci görüş için randevu aldı"
       ],
       stats: [
-        { label: 'Onaylı Klinik', value: '1,500+' },
-        { label: 'Yardım Edilen Hasta', value: '900k+' },
-        { label: 'Doğrulanmış Yorum', value: '6,000+' },
-        { label: 'Tıbbi Destek', value: '24/7' }
+        { label: 'Aktif Kurs', value: '120+' },
+        { label: 'Mezun Doktor', value: '4,500+' },
+        { label: 'Online Görüşme', value: '12k+' },
+        { label: 'Eğitmen', value: '50+' }
       ],
       process: [
-        { title: 'Talep Gönderin', desc: 'Tıbbi ihtiyaçlarınızı ve kayıtlarınızı güvenle paylaşın.' },
-        { title: 'Ücretsiz Teşhis', desc: 'Doktorlarımız vakanızı 24 saat içinde analiz eder.' },
-        { title: 'Teklifleri Karşılaştırın', desc: 'Size özel hazırlanmış 3+ farklı plan alın.' },
-        { title: 'Tedaviye Başlayın', desc: 'Konaklama, transfer ve 24/7 destek bizden.' }
+        { title: 'Eğitim Seçin', desc: 'Kariyer hedeflerinize uygun profesyonel eğitimleri keşfedin.' },
+        { title: 'Online Katılın', desc: 'Teorik dersleri dilediğiniz yerden, dilediğiniz zaman izleyin.' },
+        { title: 'Pratik Yapın', desc: 'Uygulamalı workshoplar ile yeteneklerinizi geliştirin.' },
+        { title: 'Sertifika', desc: 'Başarınızı uluslararası geçerliliği olan sertifikalarla belgeleyin.' }
       ],
       destinations: {
-        title: "Popüler Destinasyonlar",
-        desc: "Kaliteden ödün vermeden %70'e varan tasarruf imkanlarını keşfedin.",
-        allBtn: "Tüm Destinasyonları Gör",
-        compare: "Karşılaştır",
-        save: "Tasarruf",
-        bestQuality: "En İyi Kalite",
-        startPrice: "Ortalama başlangıç fiyatı"
+        title: "Öne Çıkan Eğitim Kategorileri",
+        desc: "Uzmanlığınızı bir ileri seviyeye taşıyacak kapsamlı müfredatlar.",
+        allBtn: "Tüm Kategorileri Gör",
+        compare: "İncele",
+        save: "Avantajlı",
+        bestQuality: "Premium",
+        startPrice: "Başlangıç"
       },
       categories: {
-        title: "Uzmanlık Alanına Göre",
-        highlight: "Göz Atın",
-        desc: "Dünyanın önde gelen mükemmeliyet merkezleriyle çalışıyoruz. En iyi uzmanları bulmak için bir kategori seçin.",
+        title: "Bölümlere Göre",
+        highlight: "Keşfedin",
+        desc: "Tıbbın her alanında uzmanlaşmış eğitmen kadrosu ve detaylı içerikler.",
         viewAll: "Tümünü Gör",
         items: [
-          { name: "Diş Tedavisi", count: "250+ Klinik", subs: ['Diş İmplantı', 'Veneer', 'Hollywood Gülüşü', 'Kron', 'All-on-4', 'Kanal Tedavisi'] },
-          { name: "Plastik Cerrahi", count: "180+ Klinik", subs: ['Rinoplasti', 'Saç Ekimi', 'Meme Dikleştirme', 'Liposuction', 'Karın Germe', 'Yüz Germe'] },
-          { name: "Onkoloji", count: "90+ Klinik", subs: ['Meme Kanseri', 'Prostat Kanseri', 'Akciğer Kanseri', 'Kemoterapi', 'İmmünoterapi', 'Mide Kanseri'] },
-          { name: "Nöroloji", count: "50+ Klinik", subs: ['Epilepsi', 'Parkinson', 'MS', 'Alzheimer', 'Bel Fıtığı', 'İnme Rehabilitasyonu'] }
+          { name: "Medikal Estetik", count: "45 Kurs", subs: ['Botoks', 'Dolgu', 'Mezoterapi', 'PRP', 'İp Askı'] },
+          { name: "Cerrahi", count: "30 Kurs", subs: ['Rinoplasti', 'Meme Cerrahisi', 'Liposuction', 'Blefaroplasti'] },
+          { name: "Diş Hekimliği", count: "25 Kurs", subs: ['İmplant', 'Gülüş Tasarımı', 'Lamina', 'Ortodonti'] },
+          { name: "Klinik Yönetimi", count: "15 Kurs", subs: ['Hasta İletişimi', 'Dijital Pazarlama', 'Sağlık Turizmi', 'Hukuk'] }
         ]
       },
       services: {
-        title: "Ücretsiz Hasta Odaklı Hizmetlerimiz",
-        subtitle: "Klinik seçiminden eve dönüşünüze kadar tüm süreci sizin için biz yönetiyoruz.",
+        title: "Platform Özellikleri",
+        subtitle: "Hem öğrenin, hem de online muayene teknolojimizle hastalarınıza ulaşın.",
         items: [
-          { title: "Kişisel Medikal Koordinatör", desc: "Uzmanlarımız, vakanız için en uygun kliniği ve doktoru 24 saat içinde bulur." },
-          { title: "Online Konsültasyon", desc: "Yola çıkmadan önce doktorunuzla tanışın. Tüm sorularınızı evinizin konforunda yanıtlayalım." },
-          { title: "7/24 Tam Destek", desc: "Hastane yatışı, tercüme ve takip bakımı dahil her adımda yanınızdayız." }
+          { title: "Sürekli Eğitim", desc: "Sürekli güncellenen kütüphane ile tıptaki gelişmeleri takip edin." },
+          { title: "Tele-Tıp Altyapısı", desc: "Hastalarınızla güvenli, KVKK uyumlu görüntülü görüşmeler yapın." },
+          { title: "Vaka Tartışmaları", desc: "Meslektaşlarınızla zorlu vakaları tartışın ve deneyim paylaşın." }
         ]
       },
       medicalBoard: {
-        title: "Uzman Tıbbi Danışma Kurulumuz",
-        desc: "Tüm tıbbi içeriklerimiz ve klinik önerilerimiz, alanında uzman doktorlardan oluşan kurulumuz tarafından denetlenmektedir.",
+        title: "Akademik Kadromuz",
+        desc: "Eğitimlerimiz alanında isim yapmış öncü profesörler ve uzmanlar tarafından verilmektedir.",
         roles: {
-          director: "Medikal Direktör",
-          advisor: "Klinik Danışman",
-          quality: "Kalite Başkanı"
+          director: "Akademik Direktör",
+          advisor: "Eğitim Danışmanı",
+          quality: "Müfredat Sorumlusu"
         },
         experts: {
-          plastic: "Plastik Cerrahi Uzmanı",
+          plastic: "Plastik Cerrahi Hocası",
           ivf: "Tüp Bebek Uzmanı",
-          oncology: "Onkoloji Uzmanı"
+          oncology: "Onkoloji Profesörü"
         }
       },
       stories: {
-        title: "Gerçek Hayatlar, Gerçek Değişimler",
-        desc: "Hastalarımızın ağzından hayat değiştiren sağlık yolculukları.",
-        readAll: "Tüm Yorumları Oku",
+        title: "Katılımcı Yorumları",
+        desc: "Eğitimlerimizi tamamlayan meslektaşlarımızın görüşleri.",
+        readAll: "Tümünü Oku",
         items: [
-          { title: 'Komple Diş Restorasyonu', name: 'James, ABD', savings: '$12,000 Tasarruf' },
-          { title: 'Onkoloji Tedavisi Başarısı', name: 'Elena, İtalya', savings: 'Hayat Kurtaran Tedavi' }
+          { title: 'Kariyerimde Dönüm Noktası', name: 'Dr. Ali V.', savings: 'Rinoplasti Kursu' },
+          { title: 'Harika Bir Deneyim', name: 'Dt. Zeynep K.', savings: 'İmplant Eğitimi' }
         ]
       },
       faq: {
-        title: "Aklınızdaki Soruları Yanıtlıyoruz",
-        desc: "Tedavi süreciniz, maliyetler ve güvenlik hakkında en çok merak edilenleri derledik.",
+        title: "Sıkça Sorulan Sorular",
+        desc: "Eğitimler ve online sistem hakkında merak ettikleriniz.",
         viewAll: "Tüm SSS'leri Gör",
         items: [
-            { q: "Yurt dışında tedavi olmak güvenli mi?", a: "Kesinlikle. Sadece JCI ve ISO akreditasyonuna sahip, uluslararası güvenlik protokollerini uygulayan en iyi klinikleri seçiyoruz." },
-            { q: "Ne kadar tasarruf edebilirim?", a: "ABD, İngiltere veya Avrupa fiyatlarına kıyasla tedavi ve seyahat maliyetlerinden %50-70 oranında tasarruf edebilirsiniz." },
-            { q: "Hizmetleriniz için ücret alıyor musunuz?", a: "Hayır. Hastalarımızdan hiçbir ücret talep etmiyoruz. Gelirimizi anlaşmalı kliniklerimizden sağlıyoruz, bu da size en iyi fiyatları sunmamızı sağlıyor." }
+            { q: "Eğitimler sertifikalı mı?", a: "Evet, tüm eğitimlerimiz sonunda tarafımızdan onaylı başarı veya katılım sertifikası verilmektedir." },
+            { q: "Online muayene sistemi nasıl çalışır?", a: "Sisteme kayıtlı doktorlarımız, randevu takvimlerini oluşturarak hastalara görüntülü danışmanlık verebilir." },
+            { q: "Kurslara erişim süresi ne kadar?", a: "Satın aldığınız eğitimlere ömür boyu erişim sağlayabilirsiniz, güncellemeler dahildir." }
         ]
       },
       priceTable: {
-        title: "Neden Tedavi Seyahati?",
-        desc: "Ortalama fiyatları karşılaştırın ve kazancınızı görün.",
-        headers: { treatment: "Tedavi", uk: "🇬🇧 İngiltere Ort.", usa: "🇺🇸 ABD Ort.", tr: "🇹🇷 Türkiye Ort.", save: "Tasarrufunuz" },
+        title: "Online Muayene Avantajları",
+        desc: "Fiziksel muayeneye göre zaman ve maliyet avantajı.",
+        headers: { treatment: "Hizmet", uk: "Fiziksel", usa: "Ortalama Süre", tr: "Online (Biz)", save: "Kazanç" },
         rows: [
-          { name: 'Saç Ekimi', uk: '£8,000', usa: '$12,000', tr: '£1,800', save: '%80' },
-          { name: 'Burun Estetiği', uk: '£6,500', usa: '$9,000', tr: '£2,500', save: '%65' },
-          { name: 'Diş İmplantı (Tüm Ağız)', uk: '£22,000', usa: '$35,000', tr: '£6,000', save: '%75' },
-          { name: 'Meme Büyütme', uk: '£7,000', usa: '$10,000', tr: '£3,000', save: '%60' },
-          { name: 'Tüp Bebek (IVF)', uk: '£5,000', usa: '$15,000', tr: '£2,500', save: '%50' }
+          { name: 'Ön Görüşme', uk: '1500₺', usa: '45dk', tr: '500₺', save: 'Zaman & Nakit' },
+          { name: 'Tahlil Yorumlama', uk: '1000₺', usa: '30dk', tr: '400₺', save: 'Hız' },
+          { name: 'İkinci Görüş', uk: '2000₺', usa: '60dk', tr: '750₺', save: 'Erişim' },
+          { name: 'Takip Kontrolü', uk: 'Ücretsiz', usa: '15dk', tr: 'Ücretsiz', save: 'Konfor' },
+          { name: 'Psikolojik Danışma', uk: '1200₺', usa: '50dk', tr: '800₺', save: 'Mahremiyet' }
         ]
       },
       trustBar: {
-        title: "ULUSLARARASI AKREDİTASYONLAR VE GÜVENİLİR ORTAKLAR"
+        title: "GÜVENİLİR TEKNOLOJİ VE AKADEMİK İŞBİRLİKLERİ"
       },
       globalMedia: {
-        title: "KÜRESEL BASINDA YER ALDIĞIMIZ MECRALAR"
+        title: "BASINDA BİZ"
       },
       blog: {
-        title: "Güncel Sağlık Rehberleri",
-        desc: "Maliyetler, iyileşme süreçleri ve klinik seçimi hakkında uzman görüşleri.",
-        readAll: "Tüm Makaleleri Oku",
+        title: "Akademi Blog",
+        desc: "Tıbbi gelişmeler, vaka analizleri ve teknoloji haberleri.",
+        readAll: "Tüm Yazıları Oku",
         readMore: "Devamını Oku",
         readTime: "dk okuma",
         items: [
-          { title: '2025 Saç Ekimi Maliyetleri: Türkiye vs İngiltere', cat: 'Fiyat Analizi', date: '12 Ara 2024' },
-          { title: 'All-on-4 İmplant Rehberi: Bilmeniz Gerekenler', cat: 'Tedavi Rehberi', date: '10 Ara 2024' },
-          {title: 'Doğru Burun Estetiği Doktorunu Nasıl Seçersiniz?', cat: 'İpuçları', date: '05 Ara 2024' }
+          { title: 'Medikal Estetikte Yeni Trendler 2025', cat: 'Trendler', date: '12 Ara 2024' },
+          { title: 'Tele-Tıp: Hukuki Boyut ve Etik', cat: 'Hukuk', date: '10 Ara 2024' },
+          {title: 'Başarılı Bir Klinik Yönetimi İçin İpuçları', cat: 'Yönetim', date: '05 Ara 2024' }
         ]
       },
       careTeam: {
-        badge: "7/24 HASTA DESTEĞİ",
-        title: "Kişisel Seyahat Asistanınızla Tanışın",
-        desc: "Biz sadece bir rezervasyon sitesi değiliz. Sağlığınızı önemseyen gerçek insanlarız. Kişisel koordinatörünüz ilk çağrıdan eve dönüşünüze kadar yanınızda.",
+        badge: "7/24 DESTEK",
+        title: "Teknik ve Akademik Destek Ekibi",
+        desc: "Eğitim sürecinizde veya teknik altyapı kullanımında sorun yaşarsanız ekibimiz her an yanınızda.",
         items: [
-          "Klinik seçimi ve karşılaştırmalı teklif",
-          "Seyahat planlaması (Uçak, Otel, Transfer)",
-          "Tercümanlık hizmeti ve 7/24 asistanlık"
+          "Canlı teknik destek",
+          "Ders materyalleri ve kaynak paylaşımı",
+          "Birebir mentörlük oturumları"
         ],
-        cta: "Asistanla Konuş"
+        cta: "Destek Al"
       },
       results: {
-        title: "Gerçek Sonuçlar, Gerçek Özgüven",
-        desc: "Anlaşmalı kliniklerimizin yarattığı değişimlere tanık olun.",
-        before: "Öncesi",
-        after: "Sonrası",
-        cta: "Daha Fazla Dönüşüm Gör",
+        title: "Başarı Hikayeleri",
+        desc: "Eğitimle yetkinliğini artıran doktorlarımızdan kesitler.",
+        before: "Önce",
+        after: "Sonra",
+        cta: "Daha Fazla Gör",
         items: [
-          { title: 'Saç Ekimi', patient: 'David, 34', time: '12 Ay Sonra' },
-          { title: 'Burun Estetiği', patient: 'Emma, 29', time: '6 Ay Sonra' },
-          { title: 'Diş Kaplama (Veneers)', patient: 'Michael, 42', time: 'Final Sonuç' }
+          { title: 'İleri Cerrahi Teknikler', patient: 'Dr. Kaan', time: 'Uzmanlık Sonrası' },
+          { title: 'Estetik Uygulamalar', patient: 'Dr. Elif', time: 'Sertifika Sonrası' },
+          { title: 'Dijital Dönüşüm', patient: 'Dr. Murat', time: '6 Ay Sonra' }
         ]
       },
       globalPresence: {
-        title: "Size Her Yerde Yakınız",
-        desc: "Londra, İstanbul ve Dubai ofislerimizle, tıbbi yolculuğunuzun sorunsuz, güvenli ve ekonomik olması için 7/24 çalışıyoruz.",
-        topClinics: "En İyi %1 Klinikler",
-        topClinicsDesc: "Sadece JCI ve ISO akreditasyonuna sahip hastanelerle çalışıyoruz.",
-        patientProtection: "Hasta Koruması",
-        patientProtectionDesc: "Tüm süreç boyunca tam hukuki ve klinik destek garantisi.",
-        cta: "Hemen Klinik Bul"
+        title: "Global Eğitim Ağı",
+        desc: "Türkiye merkezli platformumuzla dünyanın dört bir yanındaki doktorlara eğitim ulaştırıyoruz.",
+        topClinics: "Seçkin Eğitmenler",
+        topClinicsDesc: "Sadece alanında kanıtlanmış başarıya sahip eğitmenlerle çalışıyoruz.",
+        patientProtection: "Öğrenci Memnuniyeti",
+        patientProtectionDesc: "Beğenmediğiniz eğitimde ilk 7 gün iade garantisi.",
+        cta: "Keşfetmeye Başla"
       },
       deals: {
-        badge: "🔥 SINIRLI SÜRELİ FIRSATLAR",
-        title: "Her Şey Dahil Sağlık Paketleri",
-        desc: "Tedavi + 5★ Otel + VIP Transfer. Gizli maliyet yok.",
+        badge: "🔥 FIRSATLAR",
+        title: "Eğitim Paketleri",
+        desc: "Birden fazla eğitimi bir arada alarak avantaj sağlayın.",
         discount: "%30 İNDİRİM",
-        grabDeal: "Fırsatı Yakala",
+        grabDeal: "Paketi İncele",
         items: [
-          { title: 'Premium Saç Ekimi', loc: 'İstanbul, Türkiye', includes: ['FUE/DHI Tekniği', '3 Gece Otel', 'VIP Transfer', 'PRP Seansı'] },
-          { title: 'Hollywood Gülüş Tasarımı', loc: 'İzmir, Türkiye', includes: ['20 Zirkonyum Kaplama', '5 Gece Otel', 'Havalimanı Karşılama', 'Şehir Turu'] },
-          { title: 'Burun Estetiği (Her Şey Dahil)', loc: 'Antalya, Türkiye', includes: ['Ameliyat & İlaçlar', '4 Gece Otel', 'Hemşire Ziyareti', 'Bakım Seti'] }
+          { title: 'Full Medikal Estetik', loc: 'Online + Uygulamalı', includes: ['Botoks', 'Dolgu', 'Mezoterapi', 'Sertifika'] },
+          { title: 'Klinik Kurulumu 101', loc: 'Online', includes: ['Yönetim', 'Pazarlama', 'Hukuk', 'Yazılım'] },
+          { title: 'Cerrahi Anatomi', loc: 'Kadavra Çalıştayı', includes: ['Teori', 'Diseksiyon', 'Materyal', 'Konaklama'] }
         ]
       },
       safety: {
-        title: "Sıkı Klinik Seçimi 🛡️",
-        desc: "Herkesle çalışmıyoruz. Sadece kliniklerin en iyi %1'i Doctora'ya kabul edilir. 4 adımlı doğrulama sürecimiz güvenliğinizi garanti eder.",
-        badge: "%100 Onaylı",
-        guaranteeTitle: "Doctora Güvenlik Garantisi",
-        guaranteeDesc: "Kliniğiniz iptal ederse veya bir sorun çıkarsa, ücretsiz değişim veya depozitonuzun tamamını iade etmeyi garanti ediyoruz.",
-        readPolicy: "Politikalarımızı Oku",
+        title: "Akreditasyon & Kalite",
+        desc: "Sunduğumuz eğitimler uluslararası standartlara ve güncel tıp literatürüne uygundur.",
+        badge: "Onaylı İçerik",
+        guaranteeTitle: "Kalite Garantisi",
+        guaranteeDesc: "Eğitim içeriklerimiz bağımsız bilim kurulu tarafından periyodik olarak denetlenir.",
+        readPolicy: "Yönetmeliği Oku",
         steps: [
-           { title: 'Lisans Doğrulaması', desc: 'Tüm devlet lisanslarını ve uluslararası akreditasyonları (JCI, ISO) kontrol ediyoruz.' },
-           { title: 'Yerinde Denetim', desc: 'Ekibimiz klinikleri gizlice ziyaret ederek hijyen ve hizmet kalitesini denetler.' },
-           { title: 'Doktor Yetkinliği', desc: 'Diplomalar, tecrübe yılları ve uluslararası eğitimler titizlikle incelenir.' }
+           { title: 'Bilimsel Doğruluk', desc: 'Kanıta dayalı tıp prensiplerinden ödün verilmez.' },
+           { title: 'Güncel Teknikler', desc: 'Eski yöntemler yerine en modern yaklaşımlar öğretilir.' },
+           { title: 'Etik Standartlar', desc: 'Tıbbi etik kurallarına tam uyum sağlanır.' }
         ]
       },
       newsletter: {
-        title: "En İyi Tedavi Fırsatları E-Postanızda",
-        desc: "Özel paket indirimleri, maliyet rehberleri ve sağlık turizmi ipuçları için abone olun.",
+        title: "Akademik Bülten",
+        desc: "Yeni açılan kurslar, webinarlar ve bilimsel makalelerden haberdar olun.",
         placeholder: "E-posta adresinizi girin",
-        subscribe: "Abone Ol",
-        note: "Asla spam yok. İstediğiniz zaman ayrılabilirsiniz."
+        subscribe: "Kayıt Ol",
+        note: "Spam yok. Sadece bilgi."
       }
     },
     features: {
-      title: "Sarfea Avantajı",
-      desc: "Uluslararası tıbbi bakımı, evinizde olduğunuz kadar güvenli ve rahat hale getiriyoruz.",
+      title: "İki Teknik Farkı",
+      desc: "Teknolojiyi ve tıbbi uzmanlığı birleştirerek eğitimde yeni bir standart belirliyoruz.",
       learnMore: "Daha Fazla Bilgi",
       items: [
-        { title: 'Ücretsiz Destek', desc: 'Tıbbi koordinatörlerimiz seyahatinizin her aşamasında ücretsiz yardımcı olur.' },
-        { title: 'Uzman Seçimi', desc: 'Sıkı kalite ve güvenlik kriterlerine göre en iyi klinikleri seçiyoruz.' },
-        { title: 'Belge Yardımı', desc: 'Çeviriler, davetiyeler ve tüm gerekli tıbbi evraklarda yardımcı oluyoruz.' },
-        { title: '7/24 Yardım', desc: 'Kesintisiz hasta koordinasyon hizmetimizle her zaman güvende hissedin.' }
+        { title: 'Hibrit Eğitim', desc: 'Online teori ve yüz yüze pratik imkanlarını birleştiriyoruz.' },
+        { title: 'Uzman Kadro', desc: 'Sadece en iyilerden öğrenin.' },
+        { title: 'Kariyer Desteği', desc: 'Mezunlarımız için klinik eşleştirme ve kariyer yönlendirmesi.' },
+        { title: 'Sürekli Erişim', desc: 'Eğitim materyallerine dilediğiniz zaman geri dönün.' }
       ]
     },
     footer: {
       badges: {
-        jci: { title: "JCI AKREDİTASYONU", desc: "Anlaşmalı Hastaneler" },
-        global: { title: "KÜRESEL ERİŞİM", desc: "92+ Ülkeden Hasta" },
-        top: { title: "EN İYİ %1 KLİNİKLER", desc: "Sıkı Seçim Süreci" }
+        jci: { title: "SERTİFİKALI", desc: "Eğitim Programları" },
+        global: { title: "GLOBAL", desc: "Uluslararası Geçerlilik" },
+        top: { title: "PREMIUM", desc: "Yüksek Görüntü Kalitesi" }
       },
-      about: "Doctora, hastaları dünya çapındaki en iyi tıbbi bakım ile buluşturan küresel bir sağlık turizmi platformudur. Hizmetimiz hastalar için %100 ücretsizdir.",
+      about: "İki Teknik, doktorlara yönelik ileri düzey mesleki eğitimler ve hastalar için güvenilir online görüşme platformu sunan yeni nesil bir sağlık teknolojisi girişimidir.",
       treatments: {
-        title: "Popüler Tedaviler",
-        items: ["Diş İmplantları", "Saç Ekimi", "Estetik Cerrahi", "Doctora Akademi (Kurslar)", "Tüm Tedaviler"]
+        title: "Popüler Eğitimler",
+        items: ["Rinoplasti", "Saç Ekimi", "Medikal Estetik", "Klinik Yönetimi", "Tüm Eğitimler"]
       },
       destinations: {
-        title: "Popüler Destinasyonlar",
-        items: ["Türkiye", "Tayland", "Meksika", "Almanya"],
-        viewAll: "Tüm Ülkeleri Gör"
+        title: "Hizmetler",
+        items: ["Online Konsültasyon", "Webinarlar", "Vaka Analizleri", "Workshoplar"],
+        viewAll: "Tümünü Gör"
       },
       contact: {
         title: "İletişim",
-        office: "London Office:",
-        address: "Baker St 221B, London, UK"
+        office: "Merkez Ofis:",
+        address: "Teknopark, İstanbul, TR"
       },
       hubs: {
-        title: "Our Global Support Hubs"
+        title: "Eğitim Merkezlerimiz"
       },
-      copyright: "© 2025 Doctora Global Ltd. Tüm hakları saklıdır.",
-      disclaimer: "Tıbbi Sorumluluk Reddi: İçerik yalnızca bilgi amaçlıdır.",
+      copyright: "© 2025 İki Teknik. Tüm hakları saklıdır.",
+      disclaimer: "Uyarı: Bu platformdaki içerikler profesyonel eğitim amaçlıdır.",
       links: {
-        editorial: "Editör Politikası",
+        editorial: "Yayın Politikası",
         privacy: "Gizlilik Politikası",
         terms: "Kullanım Koşulları"
       }
@@ -345,337 +344,336 @@ export const translations = {
     navbar: {
       home: "Home",
       findDoctor: "Find Doctor",
-      treatments: "Treatments",
-      destinations: "Destinations",
-      hospitals: "Hospitals",
+      treatments: "Courses",
+      destinations: "Telemedicine",
+      hospitals: "Academy",
       blog: "Blog",
       login: "Login",
-      searchPlaceholder: "Search treatment, doctor or country...",
-      forClinics: "For Clinics",
-      getQuote: "Get Quote"
+      searchPlaceholder: "Search courses or experts...",
+      forClinics: "For Instructors",
+      getQuote: "Register"
     },
     dashboard: {
       welcome: "Welcome,",
-      upcomingAppts: "Upcoming Appointments",
-      medicalRecords: "Medical Records",
+      upcomingAppts: "Upcoming Classes",
+      medicalRecords: "My Certificates",
       messages: "Messages",
       settings: "Settings",
       logout: "Log Out",
-      noAppts: "No scheduled appointments.",
-      lastVisit: "Last Visit",
+      noAppts: "No scheduled classes.",
+      lastVisit: "Last Watched",
       viewProfile: "View Profile",
-      myTreatmentPlan: "My Treatment Plan",
+      myTreatmentPlan: "My Curriculum",
       paymentStatus: "Payment Status",
-      support: "Live Support",
+      support: "Student Support",
       notifications: "Notifications"
     },
     doctor: {
-      verified: "VERIFIED",
-      acceptingPatients: "ACCEPTING NEW PATIENTS",
-      bookConsult: "Book Free Consult",
-      askQuestion: "Ask a Question",
-      professionalSummary: "Professional Summary",
-      topAchievements: "Top Achievements",
-      transformationGallery: "Transformation Gallery",
-      procedures: "Procedures & Specialties",
-      detailedPrices: "Detailed Price List",
-      resume: "Resume & Education",
+      verified: "VERIFIED INSTRUCTOR",
+      acceptingPatients: "AVAILABLE",
+      bookConsult: "Book Appointment",
+      askQuestion: "Ask Question",
+      professionalSummary: "About",
+      topAchievements: "Achievements",
+      transformationGallery: "Case Gallery",
+      procedures: "Specialties",
+      detailedPrices: "Consultation Fees",
+      resume: "Resume & Academic",
       experience: "Experience",
       academic: "Academic",
-      clinicInfra: "Clinic Infrastructure",
+      clinicInfra: "Clinic / Office",
       whyChoose: "Why Choose?",
       faq: "Frequently Asked Questions",
-      treatmentJourney: "Treatment Journey",
-      estimatedCost: "Estimated Treatment Cost",
-      start: "start",
-      getQuote: "Get A Free Quote",
+      treatmentJourney: "How it Works?",
+      estimatedCost: "Consultation Fee",
+      start: "session",
+      getQuote: "Book Now",
       videoConsult: "Video Consultation",
-      videoDesc: "Talk to your doctor from home. Get a second opinion before you travel.",
-      bookVideo: "Book Video Call"
+      videoDesc: "Speak with an expert from home. Diagnosis and treatment planning online.",
+      bookVideo: "Start Call"
     },
     quiz: {
       step: "Step",
       of: "of",
-      title: "Get Your Clinic Match",
-      q1: "What procedure do you need?",
-      q2: "Preferred destination?",
-      q3: "Your estimated budget?",
-      q4: "Where should we send your results?",
+      title: "Find Your Expert",
+      q1: "Which specialty do you need?",
+      q2: "What is your complaint?",
+      q3: "Have you been diagnosed before?",
+      q4: "Contact preferences?",
       placeholderName: "Full Name",
-      placeholderEmail: "Email Address",
-      placeholderPhone: "Phone Number (WhatsApp preferred)",
-      submit: "Find My Perfect Clinic",
+      placeholderEmail: "Email",
+      placeholderPhone: "Phone",
+      submit: "Find Expert",
       successTitle: "Request Received!",
-      successDesc: "Our medical coordinators are already reviewing your case. You will receive a personalized clinic match within 2-4 hours via email/WhatsApp.",
-      close: "Got it, thanks!",
-      prev: "Previous Step",
-      privacy: "Protective of your data. We strictly follow HIPAA and Global Privacy Standards."
+      successDesc: "Our experts are reviewing your case. We will contact you shortly.",
+      close: "Got it",
+      prev: "Back",
+      privacy: "Your data is protected."
     },
     search: {
-      heroTitle: "Discover the World's Best Clinics",
-      heroSub: "1,500+ verified hospitals, 6,000+ reviews and 0% commission with Doctora.",
-      placeholderTreatment: "Treatment or Procedure (e.g. Hair Transplant)",
-      placeholderLocation: "Country or City",
-      searchBtn: "Search Clinic",
-      priceComparison: "Price Comparison by Country",
+      heroTitle: "Medical Education & Consultation",
+      heroSub: "Advance your career with Two Technic or get expert advice for your health.",
+      placeholderTreatment: "Course or Specialty",
+      placeholderLocation: "Specialty",
+      searchBtn: "Search",
+      priceComparison: "Compare Courses",
       filters: "Filters",
       specialties: "Specialties",
       priceRange: "Price Range",
       applyFilters: "Apply Filters",
       cantDecide: "Can't Decide?",
-      chatWithExpert: "Chat with an Expert",
-      expertOnline: "Our coordinators are online.",
-      found: "best clinics found",
+      chatWithExpert: "Chat with Support",
+      expertOnline: "Support is online.",
+      found: "results found",
       sort: {
         mostReviewed: "Most Reviewed",
         priceLow: "Price: Low to High",
         priceHigh: "Price: High to Low",
         bestRated: "Best Rated"
       },
-      verified: "Doctora Verified",
-      allInclusive: "All Inclusive",
-      estimatedCost: "Estimated Cost",
-      getFreeQuote: "Get Free Quote",
+      verified: "Verified",
+      allInclusive: "Certified",
+      estimatedCost: "Fee",
+      getFreeQuote: "Get Info",
       details: "Details",
       from: "from",
-      stickyQuiz: "Clinic Match"
+      stickyQuiz: "Find Expert"
     },
     hero: {
-      subtitle: "HEALTH TRAVEL EXPLORER",
-      title: "Find the Best",
-      highlight: "Medical Care",
-      placeholderTreatment: "Search treatment...",
-      placeholderCountry: "Select country",
-      findClinics: "Find Clinics",
-      excellentSupport: "Excellent Health Supporter",
+      subtitle: "MEDICAL EDUCATION & TELE-HEALTH",
+      title: "Learn the Future",
+      highlight: "Of Medicine",
+      placeholderTreatment: "Search course or specialty...",
+      placeholderCountry: "Select field",
+      findClinics: "Explore Courses",
+      excellentSupport: "Professional Support",
       quality: "Quality",
-      cost: "Cost",
-      popularFields: "Popular Fields",
-      verifiedClinics: "Verified Clinics",
-      getQuote: "Get Quote",
+      cost: "Fee",
+      popularFields: "Popular Courses",
+      verifiedClinics: "Expert Instructors",
+      getQuote: "Apply",
       procedures: [
-        "Hair Transplant", "Rhinoplasty", "Dental Implants", "Breast Augmentation", 
-        "Liposuction", "Veneers", "IVF", "Gastric Sleeve", "BBL"
+        "Rhinoplasty Masterclass", "Botox & Fillers", "Face Anatomy", "Hair Transplant Tech", 
+        "Dermatologic Surgery", "Medical Aesthetics", "Laser Treatments"
       ],
       countries: [
-        "Turkey", "Thailand", "Germany", "Mexico", "South Korea", "Spain", "Poland", "United Kingdom"
+        "Plastic Surgery", "Dermatology", "Medical Aesthetics", "Dentistry", "General Surgery"
       ]
     },
     home: {
       liveTicker: [
-        "🇬🇧 John from UK requested Hair Transplant quote (2m ago)",
-        "🇩🇪 Sarah from Germany booked Rhinoplasty (5m ago)",
-        "🇺🇸 Michael from USA started Oncology consultation (12m ago)",
-        "🇫🇷 Elena from France asked about IVF prices (15m ago)",
-        "🇪🇸 Carlos from Spain is viewing Dental Implants (18m ago)"
+        "🎓 Dr. John registered for Rhinoplasty Masterclass",
+        "📹 Sarah started an Online Dermatology consult",
+        "🎓 Dr. Michael completed Botox training",
+        "📹 Elena booked a second opinion appointment"
       ],
       stats: [
-        { label: 'Verified Clinics', value: '1,500+' },
-        { label: 'Patients Helped', value: '900k+' },
-        { label: 'Verified Reviews', value: '6,000+' },
-        { label: 'Medical Support', value: '24/7' }
+        { label: 'Active Courses', value: '120+' },
+        { label: 'Alumni Doctors', value: '4,500+' },
+        { label: 'Online Consults', value: '12k+' },
+        { label: 'Instructors', value: '50+' }
       ],
       process: [
-        { title: 'Submit Request', desc: 'Securely share your medical needs and records.' },
-        { title: 'Free Diagnosis', desc: 'Our doctors analyze your case within 24 hours.' },
-        { title: 'Compare Quotes', desc: 'Receive 3+ customized treatment plans.' },
-        { title: 'Start Treatment', desc: 'Accommodation, transfer, and 24/7 support are on us.' }
+        { title: 'Select Course', desc: 'Discover professional courses that fit your career goals.' },
+        { title: 'Join Online', desc: 'Watch theoretical lessons from anywhere, anytime.' },
+        { title: 'Practice', desc: 'Enhance your skills with hands-on workshops.' },
+        { title: 'Certification', desc: 'Certify your success with internationally recognized documents.' }
       ],
       destinations: {
-        title: "Popular Destinations",
-        desc: "Discover savings up to 70% without compromising on quality.",
-        allBtn: "View All Destinations",
-        compare: "Compare",
-        save: "Savings",
-        bestQuality: "Best Quality",
-        startPrice: "Average starting price"
+        title: "Featured Course Categories",
+        desc: "Comprehensive curricula to take your expertise to the next level.",
+        allBtn: "View All Categories",
+        compare: "Inspect",
+        save: "Value",
+        bestQuality: "Premium",
+        startPrice: "Starting form"
       },
       categories: {
         title: "Browse by",
-        highlight: "Specialty",
-        desc: "We work with the world's leading centers of excellence. Choose a category to find the best specialists.",
-        viewAll: "View all",
+        highlight: "Department",
+        desc: "Expert instructor staff and detailed content in every field of medicine.",
+        viewAll: "View All",
         items: [
-          { name: "Dental Treatment", count: "250+ Clinics", subs: ['Dental Implants', 'Veneers', 'Hollywood Smile', 'Crowns', 'All-on-4', 'Root Canal'] },
-          { name: "Plastic Surgery", count: "180+ Clinics", subs: ['Rhinoplasty', 'Hair Transplant', 'Breast Lift', 'Liposuction', 'Tummy Tuck', 'Facelift'] },
-          { name: "Oncology", count: "90+ Clinics", subs: ['Breast Cancer', 'Prostate Cancer', 'Lung Cancer', 'Chemotherapy', 'Immunotherapy', 'Stomach Cancer'] },
-          { name: "Neurology", count: "50+ Clinics", subs: ['Epilepsy', 'Parkinson\'s', 'Multiple Sclerosis', 'Alzheimer\'s', 'Disc Herniation', 'Stroke Rehab'] }
+          { name: "Medical Aesthetics", count: "45 Courses", subs: ['Botox', 'Fillers', 'Mesotherapy', 'PRP', 'Threads'] },
+          { name: "Surgery", count: "30 Courses", subs: ['Rinoplasti', 'Breast Surgery', 'Liposuction', 'Blepharoplasty'] },
+          { name: "Dentistry", count: "25 Courses", subs: ['Implants', 'Smile Design', 'Veneers', 'Orthodontics'] },
+          { name: "Clinic Management", count: "15 Courses", subs: ['Patient Comm', 'Digital Marketing', 'Health Tourism', 'Law'] }
         ]
       },
       services: {
-        title: "Free Patient-Centric Services",
-        subtitle: "We manage the entire process for you, from clinic selection to your return home.",
+        title: "Platform Features",
+        subtitle: "Learn and reach your patients with our online examination technology.",
         items: [
-          { title: "Personal Medical Coordinator", desc: "Our experts find the most suitable clinic and doctor for your case within 24 hours." },
-          { title: "Online Consultation", desc: "Meet your doctor before you travel. Let us answer all your questions in the comfort of your home." },
-          { title: "24/7 Full Support", desc: "We are with you at every step, including hospital admission, translation, and follow-up care." }
+          { title: "Continuous Education", desc: "Keep up with medical developments with our constantly updated library." },
+          { title: "Tele-Medicine Infra", desc: "Make secure, compliant video calls with your patients." },
+          { title: "Case Discussions", desc: "Discuss challenging cases and share experiences with colleagues." }
         ]
       },
       medicalBoard: {
-        title: "Our Medical Advisory Board",
-        desc: "All our medical content and clinic recommendations are overseen by our board of expert doctors.",
+        title: "Our Academic Staff",
+        desc: "Our trainings are given by leading professors and experts in the field.",
         roles: {
-          director: "Medical Director",
-          advisor: "Clinical Advisor",
-          quality: "Head of Quality"
+          director: "Academic Director",
+          advisor: "Educational Advisor",
+          quality: "Curriculum Head"
         },
         experts: {
-          plastic: "Plastic Surgery Expert",
+          plastic: "Plastic Surgery Prof",
           ivf: "IVF Specialist",
-          oncology: "Oncology Expert"
+          oncology: "Oncology Prof"
         }
       },
       stories: {
-        title: "Real Lives, Real Transformations",
-        desc: "Life-changing health journeys from our patients.",
-        readAll: "Read All Reviews",
+        title: "Participant Reviews",
+        desc: "Opinions of our colleagues who completed our trainings.",
+        readAll: "Read All",
         items: [
-          { title: 'Full Mouth Restoration', name: 'James, USA', savings: '$12,000 Savings' },
-          { title: 'Oncology Treatment Success', name: 'Elena, Italy', savings: 'Life-Saving Treatment' }
+          { title: 'Career Milestone', name: 'Dr. James', savings: 'Rhinoplasty Course' },
+          { title: 'Great Experience', name: 'Dt. Sarah', savings: 'Implant Training' }
         ]
       },
       faq: {
-        title: "Answering Your Questions",
-        desc: "We have compiled the most frequently asked questions about your treatment process, costs, and safety.",
+        title: "Frequently Asked Questions",
+        desc: "Curious about trainings and the online system.",
         viewAll: "View All FAQs",
         items: [
-            { q: "Is it safe to get treatment abroad?", a: "Absolutely. We only select top clinics with JCI and ISO accreditation that follow international safety protocols." },
-            { q: "How much can I save?", a: "You can save 50-70% on treatment and travel costs compared to US, UK, or European prices." },
-            { q: "Do you charge for your services?", a: "No. We do not charge our patients any fees. We generate revenue from our partner clinics, which allows us to offer you the best prices." }
+            { q: "Are the courses certified?", a: "Yes, we provide approved success or participation certificates." },
+            { q: "How does the online exam system work?", a: "Registered doctors can create appointment calendars and provide video consulting." },
+            { q: "How long is the access?", a: "You get lifetime access to purchased trainings, updates included." }
         ]
       },
       priceTable: {
-        title: "Why Medical Travel?",
-        desc: "Compare average prices and see your savings.",
-        headers: { treatment: "Treatment", uk: "🇬🇧 UK Avg.", usa: "🇺🇸 USA Avg.", tr: "🇹🇷 Turkey Avg.", save: "Your Savings" },
+        title: "Telemedicine Advantages",
+        desc: "Time and cost advantage compared to physical examination.",
+        headers: { treatment: "Service", uk: "Physical", usa: "Avg Time", tr: "Online (Us)", save: "Gain" },
         rows: [
-          { name: 'Hair Transplant', uk: '£8,000', usa: '$12,000', tr: '£1,800', save: '80%' },
-          { name: 'Rhinoplasty', uk: '£6,500', usa: '$9,000', tr: '£2,500', save: '65%' },
-          { name: 'Dental Implants (Full Mouth)', uk: '£22,000', usa: '$35,000', tr: '£6,000', save: '75%' },
-          { name: 'Breast Augmentation', uk: '£7,000', usa: '$10,000', tr: '£3,000', save: '60%' },
-          { name: 'IVF', uk: '£5,000', usa: '$15,000', tr: '£2,500', save: '50%' }
+          { name: 'Pre-Interview', uk: '£150', usa: '45m', tr: '£50', save: 'Time & Cash' },
+          { name: 'Lab Interpretation', uk: '£100', usa: '30m', tr: '£40', save: 'Speed' },
+          { name: 'Second Opinion', uk: '£200', usa: '60m', tr: '£75', save: 'Access' },
+          { name: 'Follow-up', uk: 'Free', usa: '15m', tr: 'Free', save: 'Comfort' },
+          { name: 'Counseling', uk: '£120', usa: '50m', tr: '£80', save: 'Privacy' }
         ]
       },
       trustBar: {
-        title: "INTERNATIONAL ACCREDITATIONS AND TRUSTED PARTNERS"
+        title: "TRUSTED TECHNOLOGY AND ACADEMIC PARTNERSHIPS"
       },
       globalMedia: {
-        title: "AS SEEN IN GLOBAL MEDIA"
+        title: "AS SEEN IN PRESS"
       },
       blog: {
-        title: "Latest Health Guides",
-        desc: "Expert insights on costs, recovery processes, and clinic selection.",
+        title: "Academy Blog",
+        desc: "Medical developments, case analyses and technology news.",
         readAll: "Read All Articles",
         readMore: "Read More",
         readTime: "min read",
         items: [
-          { title: '2025 Hair Transplant Costs: Turkey vs UK', cat: 'Price Analysis', date: 'Dec 12, 2024' },
-          { title: 'All-on-4 Implant Guide: What You Need to Know', cat: 'Treatment Guide', date: 'Dec 10, 2024' },
-          {title: 'How to Choose the Right Rhinoplasty Surgeon?', cat: 'Tips', date: 'Dec 05, 2024' }
+          { title: 'New Trends in Medical Aesthetics 2025', cat: 'Trends', date: 'Dec 12, 2024' },
+          { title: 'Tele-Medicine: Legal Aspects', cat: 'Law', date: 'Dec 10, 2024' },
+          {title: 'Tips for Successful Clinic Management', cat: 'Management', date: 'Dec 05, 2024' }
         ]
       },
       careTeam: {
-        badge: "24/7 PATIENT SUPPORT",
-        title: "Meet Your Personal Travel Assistant",
-        desc: "We are not just a booking site. We are real people who care about your health. Your personal coordinator is with you from the first call to your return home.",
+        badge: "24/7 SUPPORT",
+        title: "Technical & Academic Support Team",
+        desc: "Our team is always with you if you have problems with your education process or technical infrastructure.",
         items: [
-          "Clinic selection and comparative quotes",
-          "Travel planning (Flight, Hotel, Transfer)",
-          "Interpretation service and 24/7 assistance"
+          "Live technical support",
+          "Course materials and resources",
+          "One-on-one mentorship sessions"
         ],
-        cta: "Talk to an Assistant"
+        cta: "Get Support"
       },
       results: {
-        title: "Real Results, Real Confidence",
-        desc: "Witness the transformations created by our partner clinics.",
+        title: "Success Stories",
+        desc: "Snippets from our doctors who increased their competence with education.",
         before: "Before",
         after: "After",
-        cta: "See More Transformations",
+        cta: "See More",
         items: [
-          { title: 'Hair Transplant', patient: 'David, 34', time: '12 Months Later' },
-          { title: 'Rhinoplasty', patient: 'Emma, 29', time: '6 Months Later' },
-          { title: 'Dental Veneers', patient: 'Michael, 42', time: 'Final Result' }
+          { title: 'Advanced Surgical Tech', patient: 'Dr. Dave', time: 'Post-Specialization' },
+          { title: 'Aesthetic Apps', patient: 'Dr. Mary', time: 'Post-Certificate' },
+          { title: 'Digital Transformation', patient: 'Dr. Mark', time: '6 Months Later' }
         ]
       },
       globalPresence: {
-        title: "Close to You Everywhere",
-        desc: "With our London, Istanbul, and Dubai offices, we work 24/7 to make your medical journey smooth, safe, and affordable.",
-        topClinics: "Top 1% Clinics",
-        topClinicsDesc: "We only work with hospitals that have JCI and ISO accreditation.",
-        patientProtection: "Patient Protection",
-        patientProtectionDesc: "Full legal and clinical support guarantee throughout the entire process.",
-        cta: "Find Clinic Now"
+        title: "Global Education Network",
+        desc: "We deliver education to doctors all over the world with our Turkey-based platform.",
+        topClinics: "Elite Instructors",
+        topClinicsDesc: "We only work with instructors with proven success in their fields.",
+        patientProtection: "Student Satisfaction",
+        patientProtectionDesc: "Money back guarantee in the first 7 days.",
+        cta: "Start Exploring"
       },
       deals: {
-        badge: "🔥 LIMITED TIME DEALS",
-        title: "All-Inclusive Health Packages",
-        desc: "Treatment + 5★ Hotel + VIP Transfer. No hidden costs.",
+        badge: "🔥 DEALS",
+        title: "Education Bundles",
+        desc: "Get advantages by buying multiple trainings together.",
         discount: "30% OFF",
-        grabDeal: "Grab Deal",
+        grabDeal: "View Bundle",
         items: [
-          { title: 'Premium Hair Transplant', loc: 'Istanbul, Turkey', includes: ['FUE/DHI Technique', '3 Nights Hotel', 'VIP Transfer', 'PRP Session'] },
-          { title: 'Hollywood Smile Design', loc: 'Izmir, Turkey', includes: ['20 Zirconium Veneers', '5 Nights Hotel', 'Airport Pickup', 'City Tour'] },
-          { title: 'Rhinoplasty (All Inclusive)', loc: 'Antalya, Turkey', includes: ['Surgery & Meds', '4 Nights Hotel', 'Nurse Visit', 'Care Kit'] }
+          { title: 'Full Medical Aesthetics', loc: 'Online + Hands-on', includes: ['Botox', 'Fillers', 'Mesotherapy', 'Certificate'] },
+          { title: 'Clinic Setup 101', loc: 'Online', includes: ['Management', 'Marketing', 'Law', 'Software'] },
+          { title: 'Surgical Anatomy', loc: 'Cadaver Workshop', includes: ['Theory', 'Dissection', 'Materials', 'Stay'] }
         ]
       },
       safety: {
-        title: "Strict Clinic Selection 🛡️",
-        desc: "We don't work with everyone. Only the top 1% of clinics are accepted into Doctora. Our 4-step verification process guarantees your safety.",
-        badge: "100% Verified",
-        guaranteeTitle: "Doctora Safety Guarantee",
-        guaranteeDesc: "If your clinic cancels or a problem arises, we guarantee a free replacement or a full refund of your deposit.",
-        readPolicy: "Read Our Policies",
+        title: "Accreditation & Quality",
+        desc: "Our trainings comply with international standards and current medical literature.",
+        badge: "Verified Content",
+        guaranteeTitle: "Quality Guarantee",
+        guaranteeDesc: "Our training contents are periodically audited by an independent scientific board.",
+        readPolicy: "Read Policy",
         steps: [
-           { title: 'License Verification', desc: 'We check all government licenses and international accreditations (JCI, ISO).' },
-           { title: 'On-Site Inspection', desc: 'Our team visits clinics secretly to inspect hygiene and service quality.' },
-           { title: 'Doctor Competence', desc: 'Diplomas, years of experience, and international trainings are essentially reviewed.' }
+           { title: 'Scientific Accuracy', desc: 'No compromise on evidence-based medicine principles.' },
+           { title: 'Current Techniques', desc: 'Modern approaches are taught instead of old methods.' },
+           { title: 'Ethical Standards', desc: 'Full compliance with medical ethical rules.' }
         ]
       },
       newsletter: {
-        title: "Best Treatment Deals in Your Inbox",
-        desc: "Subscribe for exclusive package discounts, cost guides, and medical tourism tips.",
-        placeholder: "Enter your email address",
+        title: "Academic Newsletter",
+        desc: "Be informed about new courses, webinars and scientific articles.",
+        placeholder: "Enter your email",
         subscribe: "Subscribe",
-        note: "No spam ever. Unsubscribe anytime."
+        note: "No spam. Just knowledge."
       }
     },
     features: {
-      title: "The Sarfea Advantage",
-      desc: "We make international medical care as safe and comfortable as being at home.",
+      title: "The Two Technic Difference",
+      desc: "We set a new standard in education by combining technology and medical expertise.",
       learnMore: "Learn More",
       items: [
-        { title: 'Free Support', desc: 'Our medical coordinators help you for free at every stage of your trip.' },
-        { title: 'Expert Selection', desc: 'We select the best clinics based on strict quality and safety criteria.' },
-        { title: 'Document Help', desc: 'We assist with translations, invitations, and all necessary medical papers.' },
-        { title: '24/7 Assistance', desc: 'Always feel safe with our round-the-clock patient coordination service.' }
+        { title: 'Hybrid Education', desc: 'We combine online theory and face-to-face practice opportunities.' },
+        { title: 'Expert Staff', desc: 'Learn only from the best.' },
+        { title: 'Career Support', desc: 'Clinic matching and career guidance for our graduates.' },
+        { title: 'Continuous Access', desc: 'Return to training materials whenever you want.' }
       ]
     },
     footer: {
       badges: {
-        jci: { title: "JCI ACCREDITATION", desc: "Partner Hospitals" },
-        global: { title: "GLOBAL REACH", desc: "Patients from 92+ Countries" },
-        top: { title: "TOP 1% CLINICS", desc: "Strict Selection Process" }
+        jci: { title: "CERTIFIED", desc: "Training Programs" },
+        global: { title: "GLOBAL", desc: "Int. Validity" },
+        top: { title: "PREMIUM", desc: "High Quality Video" }
       },
-      about: "Doctora is a global medical tourism platform connecting patients with the world's best medical care. Our service is 100% free for patients.",
+      about: "Two Technic is a next-generation health technology initiative offering advanced vocational training for doctors and a reliable online interview platform for patients.",
       treatments: {
-        title: "Popular Treatments",
-        items: ["Dental Implants", "Hair Transplant", "Cosmetic Surgery", "Doctora Academy (Courses)", "All Treatments"]
+        title: "Popular Courses",
+        items: ["Rinoplasti", "Hair Transplant", "Medical Aesthetics", "Clinic Management", "All Courses"]
       },
       destinations: {
-        title: "Popular Destinations",
-        items: ["Turkey", "Thailand", "Mexico", "Germany"],
-        viewAll: "View All Countries"
+        title: "Services",
+        items: ["Online Consultation", "Webinars", "Case Analysis", "Workshops"],
+        viewAll: "View All"
       },
       contact: {
         title: "Contact",
-        office: "London Office:",
-        address: "Baker St 221B, London, UK"
+        office: "HQ:",
+        address: "Technopark, Istanbul, TR"
       },
       hubs: {
-        title: "Our Global Support Hubs"
+        title: "Education Hubs"
       },
-      copyright: "© 2025 Doctora Global Ltd. All rights reserved.",
-      disclaimer: "Medical Disclaimer: Content is for information only.",
+      copyright: "© 2025 Two Technic. All rights reserved.",
+      disclaimer: "Disclaimer: Content is for professional educational purposes.",
       links: {
         editorial: "Editorial Policy",
         privacy: "Privacy Policy",

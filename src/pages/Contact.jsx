@@ -1,19 +1,46 @@
 import React from 'react';
-import { Mail, Phone, MessageSquare, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MessageSquare, Clock, MapPin, ArrowRight, GraduationCap, Stethoscope } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
   const supportImg = "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800";
-  
+  const location = useLocation();
+  const [subject, setSubject] = React.useState('Kurs Kaydı & Bilgi');
+  const [message, setMessage] = React.useState('');
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const type = params.get('type'); // 'enroll', 'syllabus', 'fellowship', 'brochure'
+    const course = params.get('course'); // e.g., 'dermal-filler'
+    const track = params.get('track'); // 'visiting' or 'full' for fellowship
+
+    if (type === 'enroll') {
+       setSubject('Kurs Kaydı & Bilgi');
+       setMessage(`Merhaba, "${course}" eğitimi için kayıt işlemlerini başlatmak istiyorum. Lütfen bilgi veriniz.`);
+    } else if (type === 'syllabus') {
+       setSubject('Kurs Kaydı & Bilgi');
+       setMessage(`Merhaba, "${course}" eğitiminin detaylı müfredatını (Syllabus) talep ediyorum.`);
+    } else if (type === 'fellowship') {
+       setSubject('Uzmanlık (Fellowship) Başvurusu');
+       const trackName = track === 'visiting' ? 'Visiting Scholar (Kısa Dönem)' : track === 'full' ? 'Clinical Fellow (Uzun Dönem)' : 'Genel Başvuru';
+       setMessage(`Merhaba, International Clinical Fellowship Programı kapsamında "${trackName}" programına başvurmak istiyorum. Lütfen süreç hakkında bilgilendirin.`);
+    } else if (type === 'brochure') {
+       setSubject('Broşür Talebi');
+       setMessage(`Merhaba, "${course || 'Fellowship'}" programınızın detaylı tanıtım broşürünü talep ediyorum.`);
+    }
+  }, [location]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Teşekkürler! Mesajınız alındı. Medikal koordinatörümüz kısa süre içinde sizinle iletişime geçecek.');
+    alert('Teşekkürler! Mesajınız alındı. İlgili birimimiz kısa süre içinde sizinle iletişime geçecek.');
   };
 
   const contactMethods = [
-    { icon: Phone, title: "Bizi Arayın", info: "+44 203 807 5678", sub: "Ücretsiz Ön Görüşme" },
-    { icon: Mail, title: "Bize Yazın", info: "support@doctora.com", sub: "1 Saat İçinde Yanıt" },
-    { icon: MessageSquare, title: "WhatsApp / Telegram", info: "+90 530 123 45 67", sub: "Canlı Destek" }
+    { icon: Phone, title: "Akademi Hattı", info: "+90 212 123 45 67", sub: "Kurs & Kayıt Bilgi" },
+    { icon: Stethoscope, title: "Tele-Tıp Destek", info: "+90 212 123 45 68", sub: "Randevu & Raporlar" },
+    { icon: Mail, title: "E-posta", info: "info@doctora.com", sub: "24 Saat İçinde Yanıt" }
   ];
 
   return (
@@ -27,9 +54,9 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-gradient" style={{ fontSize: '56px', fontWeight: '900', marginBottom: '24px', letterSpacing: '-0.02em' }}>Bizimle İletişime Geçin</h1>
+            <h1 className="text-gradient" style={{ fontSize: '56px', fontWeight: '900', marginBottom: '24px', letterSpacing: '-0.02em' }}>İletişime Geçin</h1>
             <p style={{ fontSize: '20px', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
-              Tedavi süreciniz, maliyetler veya seyahat planlaması hakkında sorularınız mı var? Uzman ekibimiz size yardımcı olmaya hazır.
+              Kurs kayıtları, eğitmenlik başvuruları veya online muayene süreçleri hakkında aklınıza takılan her şeyi sorabilirsiniz.
             </p>
           </motion.div>
         </div>
@@ -53,7 +80,7 @@ const Contact = () => {
                     <div style={{ width: '10px', height: '10px', background: '#10b981', borderRadius: '50%' }}></div>
                     <span style={{ fontWeight: '700', fontSize: '14px' }}>Şu an Çevrimiçi</span>
                   </div>
-                  <h3 style={{ fontSize: '24px', fontWeight: '800' }}>7/24 Hasta Destek Ekibi</h3>
+                  <h3 style={{ fontSize: '24px', fontWeight: '800' }}>Öğrenci & Hasta İşleri</h3>
                 </div>
               </div>
 
@@ -76,14 +103,6 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
-
-              <div style={{ marginTop: '40px', padding: '30px', background: 'var(--secondary)', borderRadius: '24px', color: 'white', display: 'flex', gap: '20px', alignItems: 'center' }}>
-                 <Clock size={32} color="var(--accent)" />
-                 <div>
-                    <h4 style={{ fontSize: '18px', fontWeight: '700', marginBottom: '4px' }}>Ofis Saatleri</h4>
-                    <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Pzt - Cum: 09:00 - 18:00 (Hafta sonu nöbetçi ekip bulunur)</p>
-                 </div>
-              </div>
             </motion.div>
 
             {/* Right Column: Contact Form */}
@@ -94,8 +113,8 @@ const Contact = () => {
               className="glass-premium" 
               style={{ padding: '50px', borderRadius: '40px' }}
             >
-              <h2 style={{ fontSize: '32px', marginBottom: '10px', fontWeight: '800' }}>Bize Mesaj Gönderin</h2>
-              <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Formu doldurun, en geç 2 saat içinde size dönüş yapalım.</p>
+              <h2 style={{ fontSize: '32px', marginBottom: '10px', fontWeight: '800' }}>Mesaj Gönderin</h2>
+              <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Size en doğru birimimizin dönüş yapabilmesi için lütfen konuyu belirtiniz.</p>
               
               <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '24px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
@@ -116,18 +135,20 @@ const Contact = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <label style={{ fontSize: '14px', fontWeight: '700', color: 'var(--secondary)' }}>Konu Seçiniz</label>
-                  <select style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border)', background: 'white', fontSize: '16px', outline: 'none', appearance: 'none' }}>
-                    <option>Genel Bilgi & Danışma</option>
-                    <option>Tedavi Planı & Fiyatlandırma</option>
-                    <option>Seyahat & Konaklama</option>
-                    <option>Klinik İşbirliği</option>
-                    <option>Diğer</option>
+                  <select value={subject} onChange={e => setSubject(e.target.value)} style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border)', background: 'white', fontSize: '16px', outline: 'none', appearance: 'none' }}>
+                    <option>Kurs Kaydı & Bilgi</option>
+                    <option>Uzmanlık (Fellowship) Başvurusu</option>
+                    <option>Broşür Talebi</option>
+                    <option>Online Muayene & Randevu</option>
+                    <option>Teknik Destek</option>
+                    <option>Eğitmen Başvurusu</option>
+                    <option>Kurumsal İşbirliği</option>
                   </select>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <label style={{ fontSize: '14px', fontWeight: '700', color: 'var(--secondary)' }}>Mesajınız</label>
-                  <textarea required rows="5" placeholder="Size nasıl yardımcı olabiliriz? Lütfen detay verin." style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border)', background: 'white', fontSize: '16px', outline: 'none', resize: 'none' }}></textarea>
+                  <textarea required rows="5" value={message} onChange={e => setMessage(e.target.value)} placeholder="Sorunuzu detaylıca belirtiniz..." style={{ padding: '18px', borderRadius: '16px', border: '1px solid var(--border)', background: 'white', fontSize: '16px', outline: 'none', resize: 'none' }}></textarea>
                 </div>
 
                 <button type="submit" className="btn-primary" style={{ padding: '22px', fontSize: '18px', marginTop: '10px', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
@@ -152,17 +173,17 @@ const Contact = () => {
            >
              <div style={{ position: 'absolute', inset: 0, background: 'rgba(15, 23, 42, 0.85)' }}></div>
              <div style={{ position: 'relative', zIndex: 1 }}>
-               <h2 style={{ fontSize: '36px', color: 'white', fontWeight: '900', marginBottom: '40px' }}>Ofislerimiz</h2>
+               <h2 style={{ fontSize: '36px', color: 'white', fontWeight: '900', marginBottom: '40px' }}>Kampüslerimiz</h2>
                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px' }}>
                  {[
-                   { city: "London", country: "United Kingdom", address: "123 Oxford Street, London, W1D 2HG" },
-                   { city: "Istanbul", country: "Türkiye", address: "Levent Mah. Büyükdere Cad. No:199, Şişli" },
-                   { city: "Dubai", country: "UAE", address: "Downtown Dubai, Burj Khalifa Blvd, Office 302" }
+                   { city: "İstanbul", name: "Merkez Kampüs", address: "Maslak 1453, Sarıyer, İstanbul" },
+                   { city: "Ankara", name: "Eğitim Ofisi", address: "Next Level, Söğütözü, Ankara" },
+                   { city: "Londra", name: "Int. Office", address: "Canary Wharf, London, UK" }
                  ].map((office, i) => (
                    <div key={i} style={{ flex: '1 1 300px', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', padding: '30px', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.2)' }}>
                      <MapPin size={32} color="var(--primary)" style={{ marginBottom: '20px' }} />
                      <h3 style={{ fontSize: '24px', color: 'white', fontWeight: '800', marginBottom: '8px' }}>{office.city}</h3>
-                     <div style={{ color: 'var(--primary)', fontWeight: '700', marginBottom: '16px' }}>{office.country}</div>
+                     <div style={{ color: 'var(--primary)', fontWeight: '700', marginBottom: '16px' }}>{office.name}</div>
                      <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6' }}>{office.address}</p>
                    </div>
                  ))}

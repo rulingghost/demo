@@ -1,46 +1,46 @@
 import React from 'react';
-import { Building2, Users, Star, Phone } from 'lucide-react';
+import { BookOpen, Users, Video, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 
 const StatsSection = () => {
   const { t } = useLanguage();
-  const statsData = t('home.stats') || [];
+  // We can override statsData to be more "Academy" focused if translations aren't updated yet
   
-  const icons = [
-    <Building2 className="text-blue-500" size={32} />,
-    <Users className="text-emerald-500" size={32} />,
-    <Star className="text-yellow-500" size={32} />,
-    <Phone className="text-rose-500" size={32} />
+  const stats = [
+    { value: "50+", label: "Masterclass Courses", icon: <BookOpen size={32} color="#3b82f6" />, bg: "rgba(59, 130, 246, 0.1)" },
+    { value: "12k+", label: "Happy Graduates", icon: <Users size={32} color="#10b981" />, bg: "rgba(16, 185, 129, 0.1)" },
+    { value: "4.9", label: "Average Rating", icon: <Video size={32} color="#f59e0b" />, bg: "rgba(245, 158, 11, 0.1)" },
+    { value: "150+", label: "Expert Instructors", icon: <GraduationCap size={32} color="#ef4444" />, bg: "rgba(239, 68, 68, 0.1)" }
   ];
 
   return (
-    <section style={{ position: 'relative', padding: '100px 0', overflow: 'hidden', background: 'white' }}>
-      <div style={{ position: 'absolute', top: '-50%', left: '-20%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(0, 122, 255, 0.03) 0%, transparent 70%)', zIndex: -1 }}></div>
+    <section style={{ position: 'relative', padding: '80px 0', background: '#0f172a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '30px' }}>
-          {statsData.map((stat, i) => (
+          {stats.map((stat, i) => (
             <motion.div 
               key={i} 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="glass hover-lift" 
               style={{ 
-                padding: '40px 30px', 
-                borderRadius: 'var(--radius-lg)', 
+                padding: '30px', 
+                borderRadius: '24px', 
                 textAlign: 'center',
-                border: '1px solid white',
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.05)',
+                backdropFilter: 'blur(10px)'
               }}
             >
               <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
-                <div style={{ padding: '15px', background: 'var(--surface)', borderRadius: '20px' }}>
-                  {icons[i] || icons[0]}
+                <div style={{ padding: '16px', background: stat.bg, borderRadius: '18px' }}>
+                  {stat.icon}
                 </div>
               </div>
-              <span style={{ display: 'block', fontSize: '42px', fontWeight: '900', color: 'var(--secondary)', marginBottom: '8px', letterSpacing: '-1px' }}>{stat.value}</span>
-              <span style={{ color: 'var(--text-muted)', fontWeight: '700', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{stat.label}</span>
+              <span style={{ display: 'block', fontSize: '42px', fontWeight: '900', color: 'white', marginBottom: '8px', letterSpacing: '-1px' }}>{stat.value}</span>
+              <span style={{ color: '#94a3b8', fontWeight: '600', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{stat.label}</span>
             </motion.div>
           ))}
         </div>

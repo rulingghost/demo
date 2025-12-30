@@ -5,57 +5,51 @@ import Categories from '../components/Categories';
 import Features from '../components/Features';
 import LiveTicker from '../components/home/LiveTicker';
 import StatsSection from '../components/home/StatsSection';
-import ProcessSection from '../components/home/ProcessSection';
-import DestinationsSection from '../components/home/DestinationsSection';
-import ServicesSection from '../components/home/ServicesSection';
-import TrustBar from '../components/home/TrustBar';
 import MedicalBoard from '../components/home/MedicalBoard';
 import PatientStories from '../components/home/PatientStories';
-import GlobalMedia from '../components/home/GlobalMedia';
 import BlogSection from '../components/home/BlogSection';
 import FAQSection from '../components/home/FAQSection';
 import PriceTable from '../components/home/PriceTable';
-import CareTeam from '../components/home/CareTeam';
 import ResultsSection from '../components/home/ResultsSection';
-import GlobalPresence from '../components/home/GlobalPresence';
 import DealsSection from '../components/home/DealsSection';
 import SafetySection from '../components/home/SafetySection';
-import QuickHub from '../components/home/QuickHub';
 import Newsletter from '../components/home/Newsletter';
 import SEO from '../components/SEO';
+import Courses from './Courses'; // Importing Courses component to preview on Home
 
 const Home = () => {
   return (
-    <div style={{ paddingTop: '80px' }}>
+    <div style={{ paddingTop: '0' }}> {/* Navbar now handles padding or Hero does */}
       <SEO 
-        title="Doctora | Dünya Çapında Güvenilir Sağlık Turizmi"
-        description="Türkiye'nin en iyi doktorları ve klinikleriyle tanışın. Saç ekimi, estetik cerrahi ve diş tedavilerinde uzman kadromuzla yanınızdayız."
+        title="Doctora | Tıp Eğitimi ve Tele-Tıp"
+        description="Doktorlar için ileri düzey eğitimler ve hastalar için online muayene platformu."
       />
       <Hero />
       
-      <QuickHub />
-
-      <Categories />
+      <LiveTicker />
 
       <StatsSection />
       
-      <DestinationsSection />
+      {/* Re-using Categories as Course Categories */}
+      <Categories />
 
+      {/* Re-using Deals as Education Bundles */}
+      <DealsSection />
+
+      {/* New Focus: Results (Success stories of training) */}
       <ResultsSection />
 
+      {/* Safety/Accreditation */}
       <SafetySection />
 
-      <ProcessSection />
-      
-      <CareTeam />
-
-      <TrustBar />
-      
+      {/* Academic Board */}
       <MedicalBoard />
       
+      {/* Reviews */}
       <PatientStories />
       
-      <DealsSection />
+      {/* Comparison Table (Telemedicine vs Physical) */}
+      <PriceTable />
 
       <FAQSection />
 
